@@ -1,8 +1,15 @@
+import LandingPage from "./pages/LandingPage"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 const App = () => {
   return (
-    <div className="w-screen h-screen bg-slate-600">
-      <h1 className="text-8xl text-white font-bold text-center">SwingersGolf Web App</h1>
-    </div>
+      <div className="w-screen min-h-screen flex flex-col items-center font-primary">
+        <Router>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<LandingPage/>} />
+        </Routes>
+      </Router>
+      </div>
   )
 }
 
