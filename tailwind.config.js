@@ -10,6 +10,11 @@ export default {
         'alternative': ['Montserrat Alternates', 'sans-serif'],
         'primary': ['Open Sans', 'sans-serif'],
       },
+      colors: {
+        'light-green': '#5CB85C',
+        'dark-green': '#479047',
+        'light': '#F4FBF3',
+      },
       backgroundColor: {
         'primary': '#f6f9fc',
         'secondary': '',

@@ -8,12 +8,13 @@ interface ChevronArrowButtonProps {
 }
 
 const ChevronArrowButton = ({ onClick, text, background }: ChevronArrowButtonProps) => {
-    const backgroundClass = background ? 'bg-green-800' : 'bg-transparent';
+    const backgroundClass = background ? 'bg-light' : 'bg-transparent';
+    const textClass = background ? 'text-light-green' : 'text-light';
 
     return (
         <button 
             onClick={onClick} 
-            className={`flex flex-row justify-between items-center button-arrow ${backgroundClass} gap-x-1 py-1 px-4 rounded-full text-white`}
+            className={`flex flex-row justify-between items-center button-arrow ${backgroundClass} ${textClass} gap-x-1 py-1 px-4 rounded-full`}
         >
             {text}
             <ChevronArrow/>
