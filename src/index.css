@@ -9,6 +9,12 @@
   h1 {
     @apply text-8xl font-black font-alternative text-header;
   }
+  h2 {
+    @apply text-5xl font-black font-alternative text-header;
+  }
+  h3 {
+    @apply text-3xl font-black font-alternative text-header;
+  }
   p {
     @apply text-text font-normal font-sans text-xl;
   }
