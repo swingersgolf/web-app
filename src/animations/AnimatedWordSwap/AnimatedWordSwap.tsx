@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import '../styles/WordSome.css'; // Make sure to create this CSS file
+import './AnimatedWordSwap.css';
 
-const words = ["two", "three", "four"];
-
-const getRandomWord = (currentWord: string) => {
+const getRandomWord = (words: string[], currentWord: string) => {
     let newWord;
     do {
         newWord = words[Math.floor(Math.random() * words.length)];
@@ -11,7 +9,7 @@ const getRandomWord = (currentWord: string) => {
     return newWord;
 };
 
-const WordSome = () => {
+const AnimatedWordSwap = ({words}: { words: string[] }) => {
     const [currentWord, setCurrentWord] = useState(words[0]);
     const [animation, setAnimation] = useState('');
 
@@ -20,7 +18,7 @@ const WordSome = () => {
             setAnimation('fade-out');
             setTimeout(() => {
                 setCurrentWord(prevWord => {
-                    const newWord = getRandomWord(prevWord);
+                    const newWord = getRandomWord(words, prevWord);
                     return newWord;
                 });
                 setAnimation('fade-in');
@@ -28,7 +26,7 @@ const WordSome = () => {
         }, 2000); // Change word every 2 seconds
 
         return () => clearInterval(intervalId);
-    }, []);
+    }, [words]);
 
     return (
         <span className={`animated-word ${animation}`}>
@@ -37,4 +35,4 @@ const WordSome = () => {
     );
 };
 
-export default WordSome;
+export default AnimatedWordSwap;

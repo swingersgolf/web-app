@@ -7,7 +7,13 @@
 
 @layer base {
   h1 {
-    @apply text-8xl font-black font-alternative text-white;
+    @apply text-8xl font-black font-alternative text-header;
+  }
+  p {
+    @apply text-text font-normal font-sans text-xl;
   }
 }
-  
+
+html, body {
+  overflow-x: hidden;
+}

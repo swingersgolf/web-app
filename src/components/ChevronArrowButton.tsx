@@ -16,7 +16,7 @@ const ChevronArrowButton = ({ onClick, text, background }: ChevronArrowButtonPro
             className={`flex flex-row justify-between items-center button-arrow ${backgroundClass} gap-x-1 py-1 px-4 rounded-full text-white`}
         >
             {text}
-            <ChevronArrow strokeWidth={2}/>
+            <ChevronArrow/>
         </button>
     );
 };

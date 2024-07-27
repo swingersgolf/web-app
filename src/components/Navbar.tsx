@@ -5,7 +5,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     return (
-        <nav id="navbar" className="flex flex-row justify-between items-center h-20 w-full text-white font-semibold text-base">
+        <nav id="navbar" className="flex flex-row justify-between items-center h-20 w-full text-navbar font-semibold text-base">
             <div id="pages" className="flex flex-row gap-x-12">
                 <button 
                     onClick={() => navigate('/')} 

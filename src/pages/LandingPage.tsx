@@ -1,23 +1,23 @@
 import Navbar from "../components/Navbar";
-import HeroBackground from "../assets/HeroBackground.svg";
-import HeroGolfer from "../assets/HeroGolfer.svg";
+import LandingPageBackground from "../assets/LandingPageBackground.svg";
+import Background from "../assets/Background.svg";
 import Caption from "../components/Caption";
-import WordSome from "../components/WordSome";
+import AnimatedWordSwap from "../animations/AnimatedWordSwap/AnimatedWordSwap";
+import DownloadButtons from "../components/DownloadButtons";
 
 const LandingPage = () => {
     return (
-        <div id="landing-page" className="flex flex-col items-center justify-center w-272 gap-y-10">
-            <img src={HeroBackground} id="hero-background" alt="hero-background" className="w-screen h-auto fixed inset-0 inline-block -z-50"/>
-            <img src={HeroGolfer} id="hero-golfer" alt="hero-golfer" className="fixed w-80 h-auto top-1/3 right-20"/>
+        <div id="landing-page" className="flex flex-col items-center justify-center w-272 gap-y-8">
+            <img src={LandingPageBackground} id="hero-background" alt="hero-background" className="w-screen h-auto absolute inset-0 inline-block -z-50"/>
             <Navbar/>
             <div id="hero" className="flex flex-col justify-start w-full">
-                <div id="hero-content" className="flex flex-col w-2/3 gap-y-8">
+                <div id="hero-content" className="flex flex-col w-1/2 gap-y-10">
                     <Caption text="Swingers endorsed by John Doe" route="/idk"/>
-                    <h1>Golf platform to fill out your <WordSome/>some</h1>
-                    <div id="try-now-links" className="flex flex-row">
-                        <a href="">Try now on iPhone</a>
-                        <a href="">Try now on Android</a>
-                    </div>
+                    <h1>Golf matchmaker to fill your <AnimatedWordSwap words={["two", "three", "four"]}/>some</h1>
+                    <p>
+                        Join the community of golfers that use Swingers, meet new partners, improve your game, track progress, and have fun!
+                    </p>
+                    <DownloadButtons/>
                 </div>
             </div>
         </div>
