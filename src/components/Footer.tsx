@@ -15,12 +15,20 @@ const Footer = () => {
                         <div></div>
                     </div>
                 </div>
-                <div id="website-routes" className="flex flex-col gap-y-2">
-                    <p>Pages</p>
-                    <a href="/about">About</a>
-                    <a href="/contact">Contact</a>
-                    <a href="/privacy">Privacy</a>
-                    <a href="/terms">Terms</a>
+                <div id="links" className="flex flex-row gap-x-4">
+                    <div className="flex flex-col gap-y-2">
+                        <p>Pages</p>
+                        <a href="/about">About</a>
+                        <a href="/contact">Contact</a>
+                        <a href="/privacy">Privacy</a>
+                        <a href="/terms">Terms</a>
+                    </div>
+                    <div className="flex flex-col gap-y-2">
+                        <p>Contact</p>
+                        <a href="/contact">Contact Us</a>
+                        <a href="/support">Support</a>
+                        <a href="/faq">FAQ</a>
+                    </div>
                 </div>
             </div>
             <div id="legal-info" className="flex flex-row border-t border-t-black py-2 gap-x-4">
