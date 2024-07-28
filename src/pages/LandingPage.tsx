@@ -123,7 +123,7 @@ const DiscoverThePower = () => {
 
 const Testimonials = () => {
     return (
-        <div id="testimonials" className="flex flex-col justify-center items-center text-center py-24 gap-y-8 trapezoid-background">
+        <div id="testimonials" className="flex flex-col justify-center items-center text-center py-24 gap-y-8">
             <h3>★★★★★</h3>
             <h3>I have had an amazing experience using this platform. It has helped me connect with other golfers and find partners to play with.</h3>
             <div className="flex flex-row">
@@ -137,7 +137,7 @@ const LandingPage = () => {
     return (
         <div id="landing-page" className="flex flex-col items-center justify-center w-272 gap-y-8">
             {/* <img src={LandingPageBackground} id="hero-background" alt="hero-background" className="w-auto h-[1000px] absolute top-0 inline-block -z-50"/> */}
-            <div className="hero-trapezoid-background bg-dark-green absolute inset-0"></div>
+            <div className="hero-trapezoid-background bg-light-green absolute inset-0"></div>
             <Navbar/>
             <Hero/>
             <PartnersGrid/>

@@ -2,9 +2,9 @@
 
 const Footer = () => {
     return (
-        <div id="footer" className="flex flex-col w-full py-32 gap-y-8">
+        <div id="footer" className="flex flex-col w-full py-24">
             <h3>SwingersGolf</h3>
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row justify-between py-2">
                 <div id="contact-info">
                     <p>1234 Address Road, City, Province</p>
                     <p>123-456-7890</p>
@@ -31,7 +31,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div id="legal-info" className="flex flex-row border-t border-t-black py-2 gap-x-4">
+            <div id="legal-info" className="flex flex-row border-t border-t-black pt-2 gap-x-4">
                 <p className="flex flex-grow">© 2024 SwingersGolf. All rights reserved.</p>
                 <a href="/privacy">Privacy Policy</a>
                 <a href="/terms">Terms of Service</a>

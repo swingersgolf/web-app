@@ -14,6 +14,7 @@ export default {
         'light-green': '#5CB85C',
         'dark-green': '#479047',
         'light': '#F4FBF3',
+        'dark-blue': '#0F4A75',
       },
       backgroundColor: {
         'primary': '#F4FBF3',

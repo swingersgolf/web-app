@@ -9,16 +9,16 @@ const App = () => {
   return (
       <div className="w-screen min-h-screen flex flex-col items-center font-primary">
         <Router>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<LandingPage/>} />
-          <Route path="/products" element={<Products/>} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/create-account" element={<CreateAccount/>} />
-          <Route path="/sign-in" element={<SignIn/>} />
-        </Routes>
-      </Router>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<LandingPage/>} />
+            <Route path="/products" element={<Products/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/create-account" element={<CreateAccount/>} />
+            <Route path="/sign-in" element={<SignIn/>} />
+          </Routes>
+        </Router>
       </div>
   )
 }
 
-export default App
+export default App;
