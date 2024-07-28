@@ -5,14 +5,23 @@
     width: 100%;
     height: 800px;
     clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
-    z-index: -1; /* To place it behind the content */
+    z-index: -1;
+}
+
+.hero-trapezoid-background {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 575px;
+    clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 100%);
+    z-index: -1;
 }
 
 .trapezoid-background {
     position: absolute;
     left: 0;
     width: 100%;
-    height: 575px;
-    clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 100%);
-    z-index: -1; /* To place it behind the content */
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 84%, 0% 100%);
+    z-index: -1;
 }

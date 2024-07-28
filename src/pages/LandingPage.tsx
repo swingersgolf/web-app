@@ -11,11 +11,11 @@ import "../styles/DivStyles.css";
 
 const Hero = () => {
     return (
-        <div id="hero" className="flex flex-col justify-start w-full min-h-screen relative">
+        <div id="hero" className="flex flex-col justify-start w-full relative">
             <div id="hero-content" className="flex flex-col w-1/2 gap-y-10">
                 <Caption text="Swingers endorsed by John Doe" route="/idk"/>
                 <h1>Golf matchmaker to fill your <AnimatedWordSwap words={["two", "three", "four"]}/>some</h1>
-                <p>Join the community of golfers that use Swingers, meet new partners, improve your game, track progress, and have fun!</p>
+                <p>Join the community of golfers on Swingers and meet new partners to improve your game. Track your progress, have fun, enhance your golfing experience, and make lifelong friends today!</p>
                 <DownloadButtons/>
             </div>
         </div>
@@ -123,7 +123,7 @@ const DiscoverThePower = () => {
 
 const Testimonials = () => {
     return (
-        <div id="testimonials" className="flex flex-col justify-center items-center text-center py-24 gap-y-8">
+        <div id="testimonials" className="flex flex-col justify-center items-center text-center py-24 gap-y-8 trapezoid-background">
             <h3>★★★★★</h3>
             <h3>I have had an amazing experience using this platform. It has helped me connect with other golfers and find partners to play with.</h3>
             <div className="flex flex-row">
@@ -137,7 +137,7 @@ const LandingPage = () => {
     return (
         <div id="landing-page" className="flex flex-col items-center justify-center w-272 gap-y-8">
             {/* <img src={LandingPageBackground} id="hero-background" alt="hero-background" className="w-auto h-[1000px] absolute top-0 inline-block -z-50"/> */}
-            <div className="trapezoid-background bg-dark-green absolute inset-0"></div>
+            <div className="hero-trapezoid-background bg-dark-green absolute inset-0"></div>
             <Navbar/>
             <Hero/>
             <PartnersGrid/>
