@@ -16,7 +16,7 @@ export default {
         'light': '#F4FBF3',
       },
       backgroundColor: {
-        'primary': '#f6f9fc',
+        'primary': '#F4FBF3',
         'secondary': '',
         'caption': '#3E4A3D',
       },
@@ -25,6 +25,8 @@ export default {
         'text': '#3E4A3D',
         'navbar': '#F4FBF3',
         'caption': '#F4FBF3',
+        'light-header': '#F4FBF3',
+        'light-text': '#D2D2BF',
       },
       width: {
         '272': '68rem',

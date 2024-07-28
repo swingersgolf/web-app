@@ -15,6 +15,9 @@
   h3 {
     @apply text-3xl font-black font-alternative text-header;
   }
+  h4 {
+    @apply text-xl font-black font-alternative text-light;
+  }
   p {
     @apply text-text font-normal font-sans text-xl;
   }

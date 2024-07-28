@@ -7,6 +7,7 @@ import UndrawTeam from "../assets/UndrawTeam.svg";
 import UndrawGolfer from "../assets/UndrawGolfer.svg";
 import GolfNowLogo from '../assets/logos/GolfNowLogo.svg';
 import Footer from "../components/Footer";
+import "../styles/DivStyles.css";
 
 const Hero = () => {
     return (
@@ -14,9 +15,7 @@ const Hero = () => {
             <div id="hero-content" className="flex flex-col w-1/2 gap-y-10">
                 <Caption text="Swingers endorsed by John Doe" route="/idk"/>
                 <h1>Golf matchmaker to fill your <AnimatedWordSwap words={["two", "three", "four"]}/>some</h1>
-                <p>
-                    Join the community of golfers that use Swingers, meet new partners, improve your game, track progress, and have fun!
-                </p>
+                <p>Join the community of golfers that use Swingers, meet new partners, improve your game, track progress, and have fun!</p>
                 <DownloadButtons/>
             </div>
         </div>
@@ -70,22 +69,23 @@ const ExpandYourNetwork = () => {
 const FindYourPartner = () => {
     return (
         <div id="find-your-partner" className="flex flex-col justify-center items-center text-center py-24 gap-y-16">
+            <div className="trapezoid-background bg-dark-green"></div>
             <div className="flex flex-col gap-y-2">
-                <h2>Find your golf partner and start playing</h2>
-                <p>Join our platform and discover a community of golfers ready to play. Sign up, find a golf partner, and start enjoying the game today.</p>
+                <h2 className="text-light-header">Find your golf partner and start playing</h2>
+                <p className="text-light-text">Join our platform and discover a community of golfers ready to play. Sign up, find a golf partner, and start enjoying the game today.</p>
             </div>
             <div className="flex flex-row items-center justify-center gap-x-8 w-full">
                 <div className="flex flex-col items-center justify-center gap-y-2 w-1/3">
-                    <h3>Sign up and create your profile</h3>
-                    <p>Create your profile and let others know your golfing preferences and availability.</p>
+                    <h4>Sign up and create your profile</h4>
+                    <p className="text-light-text">Create your profile and let others know your golfing preferences and availability.</p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-y-2 w-1/3">
-                    <h3>Find golf partners near you</h3>
-                    <p>Browse through a list of golfers in your area and connect with potential partners.</p>
+                    <h4>Find golf partners near you</h4>
+                    <p className="text-light-text">Browse through a list of golfers in your area and connect with potential partners.</p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-y-2 w-1/3">
-                    <h3>Schedule a game and enjoy golfing</h3>
-                    <p>Coordinate with your golf partner, choose a golf course, and have a great time playing golf together.</p>
+                    <h4>Schedule a game and enjoy golfing</h4>
+                    <p className="text-light-text">Coordinate with your golf partner, choose a golf course, and have a great time playing golf together.</p>
                 </div>
             </div>
             <div>
