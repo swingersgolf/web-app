@@ -11,7 +11,7 @@ import "../styles/DivStyles.css";
 
 const Hero = () => {
     return (
-        <div id="hero" className="flex flex-col justify-start w-full min-h-screen">
+        <div id="hero" className="flex flex-col justify-start w-full min-h-screen relative">
             <div id="hero-content" className="flex flex-col w-1/2 gap-y-10">
                 <Caption text="Swingers endorsed by John Doe" route="/idk"/>
                 <h1>Golf matchmaker to fill your <AnimatedWordSwap words={["two", "three", "four"]}/>some</h1>
@@ -69,7 +69,7 @@ const ExpandYourNetwork = () => {
 const FindYourPartner = () => {
     return (
         <div id="find-your-partner" className="flex flex-col justify-center items-center text-center py-24 gap-y-16">
-            <div className="trapezoid-background bg-dark-green"></div>
+            <div className="parallelogram-background bg-dark-green"></div>
             <div className="flex flex-col gap-y-2">
                 <h2 className="text-light-header">Find your golf partner and start playing</h2>
                 <p className="text-light-text">Join our platform and discover a community of golfers ready to play. Sign up, find a golf partner, and start enjoying the game today.</p>
@@ -136,7 +136,8 @@ const Testimonials = () => {
 const LandingPage = () => {
     return (
         <div id="landing-page" className="flex flex-col items-center justify-center w-272 gap-y-8">
-            <img src={LandingPageBackground} id="hero-background" alt="hero-background" className="w-screen h-auto absolute inset-0 inline-block -z-50"/>
+            {/* <img src={LandingPageBackground} id="hero-background" alt="hero-background" className="w-auto h-[1000px] absolute top-0 inline-block -z-50"/> */}
+            <div className="trapezoid-background bg-dark-green absolute inset-0"></div>
             <Navbar/>
             <Hero/>
             <PartnersGrid/>
