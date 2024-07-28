@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import LandingPageBackground from "../assets/LandingPageBackground.svg";
+import HomePage from "../assets/mockups/HomePage.svg";
 import Caption from "../components/Caption";
 import AnimatedWordSwap from "../animations/AnimatedWordSwap/AnimatedWordSwap";
 import DownloadButtons from "../components/DownloadButtons";
@@ -12,6 +13,7 @@ import "../styles/DivStyles.css";
 const Hero = () => {
     return (
         <div id="hero" className="flex flex-col justify-start w-full relative">
+            <img src={HomePage} alt="home-page-mockup" className="w-[1000px] h-auto absolute left-2/3"/>
             <div id="hero-content" className="flex flex-col w-1/2 gap-y-10">
                 <Caption text="Swingers endorsed by John Doe" route="/idk"/>
                 <h1>Golf matchmaker to fill your <AnimatedWordSwap words={["two", "three", "four"]}/>some</h1>
