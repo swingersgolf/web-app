@@ -1,11 +1,16 @@
-
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import Page from "./Page";
 
 const Products = () => {
     return (
-        <div id="products" className="flex flex-col items-center justify-center h-full w-full">
-            <h1 className="text-4xl font-bold">Products</h1>
-            <p className="text-xl">Coming soon...</p>
-        </div>
+        <Page id="about">
+        <div className="hero-trapezoid-background bg-light-green absolute inset-0"></div>
+        <Navbar/>
+        <h1 className="text-4xl font-black">Products</h1>
+        <p className="text-lg font-semibold">Coming soon...</p>
+        <Footer/>
+    </Page>
     );
 }
 

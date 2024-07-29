@@ -9,6 +9,7 @@ import UndrawGolfer from "../assets/UndrawGolfer.svg";
 import GolfNowLogo from '../assets/logos/GolfNowLogo.svg';
 import Footer from "../components/Footer";
 import "../styles/DivStyles.css";
+import Page from "./Page";
 
 const Hero = () => {
     return (
@@ -137,7 +138,7 @@ const Testimonials = () => {
 
 const LandingPage = () => {
     return (
-        <div id="landing-page" className="flex flex-col items-center justify-center w-272 gap-y-8">
+        <Page id="landing-page">
             {/* <img src={LandingPageBackground} id="hero-background" alt="hero-background" className="w-auto h-[1000px] absolute top-0 inline-block -z-50"/> */}
             <div className="hero-trapezoid-background bg-light-green absolute inset-0"></div>
             <Navbar/>
@@ -148,7 +149,7 @@ const LandingPage = () => {
             <DiscoverThePower/>
             <Testimonials/>
             <Footer/>
-        </div>
+        </Page>
     );
 }
 
