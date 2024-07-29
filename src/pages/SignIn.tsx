@@ -6,7 +6,7 @@ import TextButton from "../components/TextButton";
 const SignIn = () => {
     return (
         <Page id="sign-in">
-            {/* <div className="trapezoid-background bg-light-green"></div> */}
+            <div className="trapezoid-background bg-dark-green"></div>
             <div id="sign-in-content" className="flex flex-col justify-start gap-y-8 py-16">
                 <img src={BannerLogo} alt="banner-logo" className="w-40"/>
                 <Card id="sign-in-form" className="w-form-card h-fit gap-y-8">
