@@ -6,21 +6,21 @@ import TextButton from "../components/TextButton";
 const SignIn = () => {
     return (
         <Page id="sign-in">
-            <div className="trapezoid-background bg-dark-green"></div>
+            <div className="trapezoid-background bg-dark-green"/>
             <div id="sign-in-content" className="flex flex-col justify-start gap-y-8 py-16">
                 <img src={BannerLogo} alt="banner-logo" className="w-40"/>
                 <Card id="sign-in-form" className="w-form-card h-fit gap-y-8">
                     <h3>Sign in to your account</h3>
                     <div>
                         <p>Email</p>
-                        <input type="text" className="w-full"/>
+                        <input type="text" className="w-full bg-light"/>
                     </div>
                     <div>
                         <div className="flex flex-row justify-between items-center">
                             <p>Password</p>
                             <a href="/forgot-password" className="text-light-green">Forgot your password?</a>
                         </div>
-                        <input type="password" className="w-full"/>
+                        <input type="password" className="w-full bg-light"/>
                     </div>                    
                     <TextButton text="Sign In"/>
                     <div className="flex justify-center items-center text-center">

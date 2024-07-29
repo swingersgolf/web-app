@@ -1,8 +1,8 @@
 
 
-const TextButton = ({ text }: { text: string }) => {
+const TextButton = ({ text, onClick }: { text: string, onClick: () => void }) => {
     return (
-        <button className="text-center w-full px-4 py-3 bg-dark-green text-light text-lg font-alternative font-semibold rounded-md">{text}</button>
+        <button onClick={onClick} className="text-center w-full px-4 py-3 bg-dark-green text-light text-lg font-alternative font-semibold rounded-md">{text}</button>
     );
 }
 
