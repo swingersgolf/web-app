@@ -13,7 +13,7 @@ const Navbar = () => {
                 >
                     SwingersGolf
                 </button>
-                <button 
+                {/* <button 
                     onClick={() => navigate('/products')}
                 >
                     Products
@@ -22,7 +22,7 @@ const Navbar = () => {
                     onClick={() => navigate('/about')}
                 >
                     About
-                </button>
+                </button> */}
             </div>
             <div id="account" className="flex flex-row gap-x-4">
                 <ChevronArrowButton text="Create Account" onClick={() => navigate('/create-account')} />

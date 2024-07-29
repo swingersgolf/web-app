@@ -31,7 +31,14 @@ export default {
       },
       width: {
         '272': '68rem',
+        'form-card': '34rem',
         'hero-image': '250rem',
+      },
+      height: {
+
+      },
+      boxShadow: {
+        'card': 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
       },
     },
   },

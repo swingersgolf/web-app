@@ -1,7 +1,5 @@
 import LandingPage from "./pages/LandingPage"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Products from "./pages/Products";
-import About from "./pages/About";
 import CreateAccount from "./pages/CreateAccount";
 import SignIn from "./pages/SignIn";
 import Contact from "./pages/Contact";
@@ -12,8 +10,6 @@ const App = () => {
         <Router>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<LandingPage/>} />
-            <Route path="/products" element={<Products/>} />
-            <Route path="/about" element={<About/>} />
             <Route path="/create-account" element={<CreateAccount/>} />
             <Route path="/sign-in" element={<SignIn/>} />
             <Route path="/contact" element={<Contact/>} />
