@@ -1,9 +1,9 @@
-import LandingPage from "./pages/LandingPage"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Contact from "./pages/Contact";
-import Privacy from "./pages/Privacy";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
+import LandingPage from "@pages/LandingPage"
+import Contact from "@pages/Contact";
+import Privacy from "@pages/Privacy";
+import Register from "@pages/Register";
+import Login from "@pages/Login";
 
 const App = () => {
   return (
