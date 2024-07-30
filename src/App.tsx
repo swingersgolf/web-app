@@ -4,7 +4,7 @@ import Contact from "@pages/Contact";
 import Privacy from "@pages/Privacy";
 import Register from "@pages/Register";
 import Login from "@pages/Login";
-import ScrollToTop from "@utils/ScrollToTop.tsx";
+import ScrollToTop from "@utils/ScrollToTop";
 
 const App = () => {
   return (
