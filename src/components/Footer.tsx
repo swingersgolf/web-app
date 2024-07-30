@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Footer = () => {
     const navigate = useNavigate();
     return (
-        <div id="footer" className="flex flex-row justify-between w-full py-24">
+        <div id="footer" className="flex flex-row justify-between w-full py-24 border-t border-dark">
             <div id="contact-info" className="flex flex-col justify-between">
                 <h4 className="text-text">SwingersGolf</h4>
                 <p id="copyright" className="hover:text-text text-sm font-medium">© 2021 SwingersGolf, Inc.</p>
