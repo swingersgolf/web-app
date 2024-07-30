@@ -4,6 +4,7 @@ import Page from './Page';
 import Card from '../components/Card';
 import BannerLogo from '../assets/branding/BannerLogo.svg';
 import TextButton from '../components/TextButton';
+import Legal from '../components/Legal';
 
 const CreateAccount = () => {
     const [email, setEmail] = useState('');
@@ -34,7 +35,7 @@ const CreateAccount = () => {
                     <div className="flex flex-col">
                         <p>Email</p>
                         <input
-                            className="bg-light w-full"
+                            className="w-full"
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -43,7 +44,7 @@ const CreateAccount = () => {
                     <div className="flex flex-col">
                         <p>Full name</p>
                         <input
-                            className="bg-light w-full"
+                            className="w-full"
                             type="name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -52,7 +53,7 @@ const CreateAccount = () => {
                     <div className="flex flex-col">
                         <p>Password</p>
                         <input
-                            className="bg-light w-full"
+                            className="w-full"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
@@ -66,11 +67,7 @@ const CreateAccount = () => {
                         Already have an account?&nbsp;<a href="/sign-in" className="text-light-green">Sign in</a>
                     </div>
                 </Card>
-                <div id="legal" className="flex flex-row justify-start items-center gap-x-8">
-                    <p className="text-sm">© Swingers</p>
-                    <p className="text-sm">Contact</p>
-                    <p className="text-sm">Privacy & terms</p>
-                </div>
+                <Legal/>
             </div>
         </Page>
     );

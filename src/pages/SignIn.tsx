@@ -2,8 +2,14 @@ import Card from "../components/Card";
 import Page from "./Page";
 import BannerLogo from "../assets/branding/BannerLogo.svg";
 import TextButton from "../components/TextButton";
+import Legal from "../components/Legal";
 
 const SignIn = () => {
+
+    const handleSignIn = () => {
+        console.log('Sign in');
+    };
+
     return (
         <Page id="sign-in">
             <div className="trapezoid-background bg-dark-green"/>
@@ -13,25 +19,21 @@ const SignIn = () => {
                     <h3>Sign in to your account</h3>
                     <div>
                         <p>Email</p>
-                        <input type="text" className="w-full bg-light"/>
+                        <input type="text" className="w-full"/>
                     </div>
                     <div>
                         <div className="flex flex-row justify-between items-center">
                             <p>Password</p>
                             <a href="/forgot-password" className="text-light-green">Forgot your password?</a>
                         </div>
-                        <input type="password" className="w-full bg-light"/>
+                        <input type="password" className="w-full"/>
                     </div>                    
-                    <TextButton text="Sign In"/>
+                    <TextButton text="Sign In" onClick={handleSignIn}/>
                     <div className="flex justify-center items-center text-center">
                         New to Swingers?&nbsp;<a href="/create-account" className="text-light-green">Create an account</a>
                     </div>
                 </Card>
-                <div id="legal" className="flex flex-row justify-start items-center gap-x-8">
-                    <p className="text-sm">© Swingers</p>
-                    <p className="text-sm">Contact</p>
-                    <p className="text-sm">Privacy & terms</p>
-                </div>
+                <Legal/>
             </div>
         </Page>
     );

@@ -14,20 +14,16 @@ export default {
         'light-green': '#5CB85C',
         'dark-green': '#479047',
         'light': '#F4FBF3',
-        'dark-blue': '#0F4A75',
-      },
-      backgroundColor: {
-        'primary': '#F4FBF3',
-        'secondary': '',
+        'dark': '#002100',
+        'primary': '#f6f9fc',
         'caption': '#3E4A3D',
       },
       textColor: {
         'header': '#002100',
         'text': '#3E4A3D',
-        'navbar': '#F4FBF3',
         'caption': '#F4FBF3',
         'light-header': '#F4FBF3',
-        'light-text': '#D2D2BF',
+        'light-text': '#E5E4E2',
       },
       width: {
         '272': '68rem',

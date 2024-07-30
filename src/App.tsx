@@ -6,7 +6,7 @@ import Contact from "./pages/Contact";
 
 const App = () => {
   return (
-      <div className="w-screen min-h-screen flex flex-col items-center font-primary">
+      <div className="w-screen min-h-screen flex flex-col items-center font-primary bg-primary">
         <Router>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<LandingPage/>} />
