@@ -36,7 +36,6 @@ const Login = () => {
                         <div>
                             <label><p>Email</p></label>
                             <input
-                                className="w-full"
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -48,7 +47,6 @@ const Login = () => {
                                 <a href="/forgot-password" className="text-light-green">Forgot your password?</a>
                             </label>
                             <input
-                                className="w-full"
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}

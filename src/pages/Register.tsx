@@ -36,7 +36,6 @@ const Register = () => {
                         <div className="flex flex-col">
                             <label><p>Email</p></label>
                             <input
-                                className="w-full"
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
@@ -45,7 +44,6 @@ const Register = () => {
                         <div className="flex flex-col">
                             <label><p>Full name</p></label>
                             <input
-                                className="w-full"
                                 type="name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
@@ -54,7 +52,6 @@ const Register = () => {
                         <div className="flex flex-col">
                             <label><p>Password</p></label>
                             <input
-                                className="w-full"
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}

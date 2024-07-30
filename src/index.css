@@ -22,7 +22,10 @@
     @apply text-text font-normal font-sans text-xl;
   }
   input {
-    @apply border px-4 py-3 rounded-md;
+    @apply border px-4 py-3 rounded-md w-full;
+  }
+  textarea {
+    @apply border px-4 py-3 rounded-md w-full resize-none;
   }
 }
 
