@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import ChevronArrowButton from "./ChevronArrowButton.tsx";
-import BannerLogoWhite from "../assets/branding/BannerLogoWhite.svg"
+import LogoButton from './LogoButton.tsx';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -8,12 +8,7 @@ const Navbar = () => {
     return (
         <nav id="navbar" className="flex flex-row justify-between items-center h-20 w-full text-light font-semibold text-base z-50">
             <div id="pages" className="flex flex-row gap-x-12">
-                <button 
-                    onClick={() => navigate('/')} 
-                    className="font-alternative font-black text-2xl"
-                >
-                    <img src={BannerLogoWhite} alt="banner-logo-white" className='h-8 w-auto'/>
-                </button>
+                <LogoButton color="white"/>
                 {/* <button 
                     onClick={() => navigate('/products')}
                 >
@@ -26,8 +21,8 @@ const Navbar = () => {
                 </button> */}
             </div>
             <div id="account" className="flex flex-row gap-x-4">
-                <ChevronArrowButton text="Create Account" onClick={() => navigate('/create-account')} />
-                <ChevronArrowButton text="Sign in" onClick={() => navigate('/sign-in')} background />
+                <ChevronArrowButton text="Create Account" onClick={() => navigate('/register')} />
+                <ChevronArrowButton text="Sign in" onClick={() => navigate('/login')} background />
             </div>
         </nav>
     );

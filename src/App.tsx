@@ -1,8 +1,9 @@
 import LandingPage from "./pages/LandingPage"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CreateAccount from "./pages/CreateAccount";
-import SignIn from "./pages/SignIn";
 import Contact from "./pages/Contact";
+import Privacy from "./pages/Privacy";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
@@ -10,9 +11,10 @@ const App = () => {
         <Router>
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<LandingPage/>} />
-            <Route path="/create-account" element={<CreateAccount/>} />
-            <Route path="/sign-in" element={<SignIn/>} />
+            <Route path="/register" element={<Register/>} />
+            <Route path="/login" element={<Login/>} />
             <Route path="/contact" element={<Contact/>} />
+            <Route path="/privacy" element={<Privacy/>} />
           </Routes>
         </Router>
       </div>

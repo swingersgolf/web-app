@@ -4,16 +4,16 @@ import BannerLogo from "../assets/branding/BannerLogo.svg";
 import TextButton from "../components/TextButton";
 import Legal from "../components/Legal";
 
-const SignIn = () => {
+const Login = () => {
 
     const handleSignIn = () => {
         console.log('Sign in');
     };
 
     return (
-        <Page id="sign-in">
+        <Page id="login">
             <div className="trapezoid-background bg-dark-green"/>
-            <div id="sign-in-content" className="flex flex-col justify-start gap-y-8 py-16">
+            <div id="login-content" className="flex flex-col justify-start gap-y-8 py-16">
                 <img src={BannerLogo} alt="banner-logo" className="w-40"/>
                 <Card id="sign-in-form" className="w-form-card h-fit gap-y-8">
                     <h3>Sign in to your account</h3>
@@ -30,7 +30,7 @@ const SignIn = () => {
                     </div>                    
                     <TextButton text="Sign In" onClick={handleSignIn}/>
                     <div className="flex justify-center items-center text-center">
-                        New to Swingers?&nbsp;<a href="/create-account" className="text-light-green">Create an account</a>
+                        New to Swingers?&nbsp;<a href="/register" className="text-light-green">Create an account</a>
                     </div>
                 </Card>
                 <Legal/>
@@ -39,4 +39,4 @@ const SignIn = () => {
     );
 }
 
-export default SignIn;
+export default Login;
