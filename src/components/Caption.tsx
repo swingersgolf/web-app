@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "@styles/ChevronArrow.css";
-import ChevronArrow from "@components/ChevronArrow.tsx";
+import ChevronArrow from "@components/ChevronArrow";
 
 interface CaptionProps {
     text: string;

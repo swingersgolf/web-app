@@ -1,4 +1,5 @@
 import { SiLinkedin, SiInstagram, SiX, SiFacebook } from "react-icons/si";
+import Page from "@components/Page";
 
 const Contact = () => {
     
@@ -8,7 +9,7 @@ const Contact = () => {
     }
 
     return (
-        <div>
+        <Page>
             <h1>Contact Us</h1>
             <p>Fill out the form below to contact us.</p>
             <form>
@@ -28,7 +29,7 @@ const Contact = () => {
                     <SiX className="w-8 h-8 hover:cursor-pointer" onClick={() => handleSocialMediaClick("x.com")}/>
                 </div>
 
-        </div>
+        </Page>
     )
 }
 

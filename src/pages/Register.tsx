@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Page from '@pages/Page.tsx';
-import Card from '@components/Card.tsx';
+import Page from '@components/Page';
+import Card from '@components/Card';
 import BannerLogo from '@assets/branding/BannerLogo.svg';
-import TextButton from '@components/buttons/TextButton.tsx';
-import Legal from '@components/Legal.tsx';
+import TextButton from '@components/buttons/TextButton';
+import Legal from '@components/Legal';
 
 const Register = () => {
     const [email, setEmail] = useState('');

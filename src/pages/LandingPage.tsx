@@ -1,15 +1,15 @@
-import Navbar from "@components/Navbar.tsx";
+import Navbar from "@components/Navbar";
 import LandingPageBackground from "@assets/LandingPageBackground.svg";
 import HomePage from "@assets/mockups/HomePage.svg";
-import Caption from "@components/Caption.tsx";
-import AnimatedWordSwap from "@animations/AnimatedWordSwap/AnimatedWordSwap.tsx";
-import DownloadButtons from "@components/buttons/DownloadButtons.tsx";
+import Caption from "@components/Caption";
+import AnimatedWordSwap from "@animations/AnimatedWordSwap/AnimatedWordSwap";
+import DownloadButtons from "@components/buttons/DownloadButtons";
 import UndrawTeam from "@assets/UndrawTeam.svg";
 import UndrawGolfer from "@assets/UndrawGolfer.svg";
 import GolfNowLogo from '@assets/logos/GolfNowLogo.svg';
-import Footer from "@components/Footer.tsx";
+import Footer from "@components/Footer";
 import "@styles/DivStyles.css";
-import Page from "@pages/Page.tsx";
+import Page from "@components/Page";
 
 const Hero = () => {
     return (

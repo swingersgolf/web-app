@@ -1,4 +1,4 @@
-import Page from "@pages/Page.tsx";
+import Page from "@components/Page";
 
 const Privacy = () => {
     return (

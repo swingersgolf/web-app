@@ -1,8 +1,8 @@
-import Card from "@components/Card.tsx";
-import Page from "@pages/Page.tsx";
+import Card from "@components/Card";
+import Page from "@components/Page";
 import BannerLogo from "@assets/branding/BannerLogo.svg";
-import TextButton from "@components/buttons/TextButton.tsx";
-import Legal from "@components/Legal.tsx";
+import TextButton from "@components/buttons/TextButton";
+import Legal from "@components/Legal";
 import axios from "axios";
 import { useState } from "react";
 
