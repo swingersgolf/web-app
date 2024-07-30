@@ -1,11 +1,17 @@
 import { useNavigate } from "react-router-dom";
+import BannerLogo from "../assets/branding/BannerLogo.svg";
 
 const Footer = () => {
     const navigate = useNavigate();
     return (
         <div id="footer" className="flex flex-row justify-between w-full py-24 border-t border-dark">
             <div id="contact-info" className="flex flex-col justify-between">
-                <h4 className="text-text">SwingersGolf</h4>
+                <button 
+                    onClick={() => navigate('/')} 
+                    className="font-alternative font-black text-2xl"
+                >
+                    <img src={BannerLogo} alt="banner-logo" className='h-8 w-auto'/>
+                </button>
                 <p id="copyright" className="hover:text-text text-md font-medium">© 2021 SwingersGolf, Inc.</p>
             </div>
             <div className="flex flex-row gap-x-8">

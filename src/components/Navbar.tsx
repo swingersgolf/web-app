@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import ChevronArrowButton from "./ChevronArrowButton.tsx";
-import BannerLogoWhite from '../assets/branding/BannerLogoWhite.svg';
+import BannerLogoWhite from "../assets/branding/BannerLogoWhite.svg"
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Navbar = () => {
                     onClick={() => navigate('/')} 
                     className="font-alternative font-black text-2xl"
                 >
-                    <img src={BannerLogoWhite} alt="banner-logo-white" className='h-12 w-auto'/>
+                    <img src={BannerLogoWhite} alt="banner-logo-white" className='h-8 w-auto'/>
                 </button>
                 {/* <button 
                     onClick={() => navigate('/products')}
