@@ -32,33 +32,35 @@ const Register = () => {
                 <img src={BannerLogo} alt="banner-logo" className="w-40"/>
                 <Card id="create-account-form" className="w-form-card h-fit gap-y-8">
                     <h3>Create your account</h3>
-                    <div className="flex flex-col">
-                        <p>Email</p>
-                        <input
-                            className="w-full"
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />   
-                    </div> 
-                    <div className="flex flex-col">
-                        <p>Full name</p>
-                        <input
-                            className="w-full"
-                            type="name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />   
-                    </div> 
-                    <div className="flex flex-col">
-                        <p>Password</p>
-                        <input
-                            className="w-full"
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />   
-                    </div>
+                    <form action="" className='flex flex-col gap-y-8'>
+                        <div className="flex flex-col">
+                            <label><p>Email</p></label>
+                            <input
+                                className="w-full"
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />   
+                        </div> 
+                        <div className="flex flex-col">
+                            <label><p>Full name</p></label>
+                            <input
+                                className="w-full"
+                                type="name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />   
+                        </div> 
+                        <div className="flex flex-col">
+                            <label><p>Password</p></label>
+                            <input
+                                className="w-full"
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />   
+                        </div>
+                    </form>
                     <p>By clicking create account you are agreeing to follow our
                          <a className='text-dark-green' href='/privacy'> privacy & terms</a>.
                     </p>    
