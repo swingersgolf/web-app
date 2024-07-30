@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import BannerLogo from '../assets/branding/BannerLogo.svg';
-import BannerLogoWhite from '../assets/branding/BannerLogoWhite.svg';
+import BannerLogo from '@assets/branding/BannerLogo.svg';
+import BannerLogoWhite from '@assets/branding/BannerLogoWhite.svg';
 
 interface LogoButtonProps {
     color?: 'white' | 'green';

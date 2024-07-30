@@ -1,5 +1,5 @@
-import PreOrderOnAppStore from "../assets/badges/PreOrderOnAppStore.svg";
-import PreRegisterOnGooglePlay from "../assets/badges/PreRegisterOnGooglePlay.png";
+import PreOrderOnAppStore from "@assets/badges/PreOrderOnAppStore.svg";
+import PreRegisterOnGooglePlay from "@assets/badges/PreRegisterOnGooglePlay.png";
 
 const DownloadButtons = () => {
     return (

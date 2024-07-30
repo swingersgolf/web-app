@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import BannerLogo from "../assets/branding/BannerLogo.svg";
-import LogoButton from "./LogoButton";
+import BannerLogo from "@assets/branding/BannerLogo.svg";
+import LogoButton from "@components/buttons/LogoButton.tsx";
 
 const Footer = () => {
     const navigate = useNavigate();

@@ -1,5 +1,5 @@
-import "../styles/ChevronArrow.css";
-import ChevronArrow from "./ChevronArrow";
+import "@styles/ChevronArrow.css";
+import ChevronArrow from "@components/ChevronArrow.tsx";
 
 interface ChevronArrowButtonProps {
     onClick: () => void;

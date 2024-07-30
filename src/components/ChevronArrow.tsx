@@ -1,4 +1,4 @@
-import "../styles/ChevronArrow.css";
+import "@styles/ChevronArrow.css";
 
 const ChevronArrow = () => {
     return (

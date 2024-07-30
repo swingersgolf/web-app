@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Page from './Page';
-import Card from '../components/Card';
-import BannerLogo from '../assets/branding/BannerLogo.svg';
-import TextButton from '../components/TextButton';
-import Legal from '../components/Legal';
+import Page from '@pages/Page.tsx';
+import Card from '@components/Card.tsx';
+import BannerLogo from '@assets/branding/BannerLogo.svg';
+import TextButton from '@components/buttons/TextButton.tsx';
+import Legal from '@components/Legal.tsx';
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -12,7 +12,7 @@ const Register = () => {
     const [name, setName] = useState('');
     const [error, setError] = useState('');
     
-    const createAccount = async () => {
+    const handleCreateAccount = async () => {
         try {
             const response = await axios.post('http://localhost:4000/api/users', {
                 email,
@@ -62,7 +62,7 @@ const Register = () => {
                     <p>By clicking create account you are agreeing to follow our
                          <a className='text-dark-green' href='/privacy'> privacy & terms</a>.
                     </p>    
-                    <TextButton text="Create account" onClick={createAccount}/>
+                    <TextButton text="Create account" onClick={handleCreateAccount}/>
                     <div className="flex justify-center items-center text-center">
                         Already have an account?&nbsp;<a href="/login" className="text-light-green">Sign in</a>
                     </div>
