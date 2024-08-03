@@ -1,15 +1,14 @@
-// Form.tsx
 import { FC } from 'react';
 import { useForm, SubmitHandler, Resolver, UseFormRegisterReturn, FieldError, Merge, FieldErrorsImpl } from 'react-hook-form';
 import { FiAlertTriangle } from 'react-icons/fi';
 import TextButton from '@components/buttons/TextButton';
 
 interface FormProps {
-  formFields: { label: string; type: string; name: string }[];
-  validationSchema: Resolver<any>;
-  onSubmit: SubmitHandler<any>;
-  error?: string;
-  buttonText: string;
+	formFields: { label: string; type: string; name: string }[];
+	validationSchema: Resolver<any>;
+	onSubmit: SubmitHandler<any>;
+	error?: string;
+	buttonText: string;
 }
 
 interface FormFieldProps {
