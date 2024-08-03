@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useForm, SubmitHandler, Resolver } from 'react-hook-form';
 import TextButton from '@components/buttons/TextButton';
-import FormField from '@components/FormField';
+import FormField from '@components/forms/FormField';
 
 interface FormProps {
 	formFields: { label: string; type: string; name: string }[];

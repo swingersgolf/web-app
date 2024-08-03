@@ -4,7 +4,7 @@ import Footer from "@components/Footer";
 import Card from "@components/Card";
 import TextButton from "@components/buttons/TextButton";
 import SocialMedia from "@components/SocialMedia";
-import Form from "@components/Form";
+import Form from "@components/forms/Form";
 import { contactValidationSchema } from '@utils/validationSchema';
 import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';

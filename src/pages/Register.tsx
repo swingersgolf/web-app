@@ -8,7 +8,7 @@ import { registerValidationSchema } from '@utils/validationSchema';
 import { useNavigate } from 'react-router-dom';
 import { SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import Form from '@components/Form';
+import Form from '@components/forms/Form';
 
 type FormValues = {
     email: string;
