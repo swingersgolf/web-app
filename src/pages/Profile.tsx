@@ -3,10 +3,8 @@ import Page from "@components/Page";
 
 const Profile = () => {
     return (
-        <Page>
-            <div>
-                <h1>Profile</h1>
-            </div>
+        <Page id="profile">
+            <h1>Profile</h1>
         </Page>
     )
 };
