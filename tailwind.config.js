@@ -24,6 +24,7 @@ export default {
         'caption': '#F4FBF3',
         'light-header': '#F4FBF3',
         'light-text': '#E5E4E2',
+        'alert': '#D70040',
       },
       width: {
         '272': '68rem',
