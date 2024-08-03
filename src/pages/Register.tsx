@@ -17,8 +17,8 @@ type FormValues = {
 };
 
 const formFields = [
-    { label: 'Email', type: 'email', name: 'email' },
     { label: 'Full name', type: 'text', name: 'name' },
+    { label: 'Email', type: 'email', name: 'email' },
     { label: 'Password', type: 'password', name: 'password' },
 ];
 
