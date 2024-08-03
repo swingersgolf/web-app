@@ -6,9 +6,9 @@ import BannerLogo from "@assets/branding/BannerLogo.svg";
 import Legal from "@components/Legal";
 import { loginValidationSchema } from '@utils/validationSchema';
 import { useNavigate } from 'react-router-dom';
-import AuthForm from '@components/AuthForm';
 import { SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import Form from '@components/Form';
 
 type FormValues = {
     email: string;
@@ -41,7 +41,7 @@ const Login = () => {
             <img src={BannerLogo} alt="banner-logo" className="w-40" />
             <Card id="sign-in-form" className="w-form-card h-fit gap-y-8">
                 <h3>Sign in to your account</h3>
-                <AuthForm
+                <Form
                     formFields={formFields}
                     validationSchema={yupResolver(loginValidationSchema)}
                     onSubmit={handleSignIn}

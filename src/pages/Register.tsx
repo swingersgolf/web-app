@@ -6,9 +6,9 @@ import BannerLogo from '@assets/branding/BannerLogo.svg';
 import Legal from '@components/Legal';
 import { registerValidationSchema } from '@utils/validationSchema';
 import { useNavigate } from 'react-router-dom';
-import AuthForm from '@components/AuthForm';
 import { SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import Form from '@components/Form';
 
 type FormValues = {
     email: string;
@@ -39,11 +39,11 @@ const Register = () => {
   return (
     <Page id="register">
         <div className="trapezoid-background bg-dark-green" />
-        <div id="register-content" className="flex flex-col justify-start gap-y-8 py-16">
+        <div id="register-content" className="flex flex-col justify-start gap-y-6 py-16">
             <img src={BannerLogo} alt="banner-logo" className="w-40" />
-            <Card id="create-account-form" className="w-form-card h-fit gap-y-8">
+            <Card id="create-account-form" className="w-form-card h-fit gap-y-6">
                 <h3>Create your account</h3>
-                <AuthForm
+                <Form
                     formFields={formFields}
                     validationSchema={yupResolver(registerValidationSchema)}
                     onSubmit={handleCreateAccount}
