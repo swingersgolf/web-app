@@ -1,4 +1,4 @@
-import Navbar from "@components/Navbar";
+import Navbar from "@components/marketing/Navbar";
 import LandingPageBackground from "@assets/LandingPageBackground.svg";
 import HomePage from "@assets/mockups/HomePage.svg";
 import Caption from "@components/Caption";
