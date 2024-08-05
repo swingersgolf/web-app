@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Form from '@components/forms/Form';
+import { useAuth } from '@contexts/AuthContext';
 
 type FormValues = {
     email: string;
@@ -23,15 +24,11 @@ const formFields = [
 const Login = () => {
     const navigate = useNavigate();
     const [error, setError] = useState('');
+    const { signIn } = useAuth();
 
     const handleSignIn: SubmitHandler<FormValues> = async (data) => {
-        // try {
-        //     const response = await axios.post('http://localhost:4000/api/users', data);
-        //     console.log(response.data);
-        // } catch (error) {
-        //     setError((error as any).response.data.message);
-        // }
-        navigate('/');
+        signIn(data.email, data.password);
+        navigate('/profile');
     };
 
   return (
