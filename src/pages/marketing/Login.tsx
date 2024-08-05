@@ -28,7 +28,7 @@ const Login = () => {
 
     const handleSignIn: SubmitHandler<FormValues> = async (data) => {
         signIn(data.email, data.password);
-        navigate('/profile');
+        navigate('/app');
     };
 
   return (

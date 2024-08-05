@@ -21,7 +21,7 @@ const Profile = () => {
                 <p>{token}</p>
             </div>
             <div className="bg-dark-green">
-                <ChevronArrowButton onClick={handleSignOut} text="Sign Out"/>
+                <ChevronArrowButton onClick={handleSignOut} text="Sign Out" background/>
             </div>
         </Page>
     )

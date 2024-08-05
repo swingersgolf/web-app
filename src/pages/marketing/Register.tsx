@@ -30,7 +30,7 @@ const Register = () => {
 
     const handleCreateAccount: SubmitHandler<FormValues> = async (data) => {
         createAccount(data.name, data.email, data.password);    
-        navigate('/profile');
+        navigate('/app');
     };
 
   return (
