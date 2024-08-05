@@ -3,6 +3,8 @@ import Page from "@components/Page";
 import Navbar from "@components/app/Navbar";
 import { useAuth } from "@contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import Card from "@components/Card";
+import TextButton from "@components/buttons/TextButton";
 
 
 const Profile = () => {
@@ -17,14 +19,16 @@ const Profile = () => {
     return (
         <Page id="profile">
             <Navbar/>
-            <h1>Profile</h1>
-            <div>
-                <h3>Token</h3>
-                <p>{token}</p>
-            </div>
-            <div className="bg-dark-green">
-                <ChevronArrowButton onClick={handleSignOut} text="Sign Out" background/>
-            </div>
+            <Card>
+                <h1>Profile</h1>
+                <div>
+                    <h3>Token</h3>
+                    <p>{token}</p>
+                </div>
+                <div className="bg-dark-green">
+                    <TextButton onClick={handleSignOut} text="Sign Out" ariaLabel="Sign Out Button"/>
+                </div>
+            </Card>
         </Page>
     )
 };
