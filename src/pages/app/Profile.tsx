@@ -1,5 +1,6 @@
 import ChevronArrowButton from "@components/buttons/ChevronArrowButton";
 import Page from "@components/Page";
+import Navbar from "@components/app/Navbar";
 import { useAuth } from "@contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +16,7 @@ const Profile = () => {
 
     return (
         <Page id="profile">
+            <Navbar/>
             <h1>Profile</h1>
             <div>
                 <h3>Token</h3>

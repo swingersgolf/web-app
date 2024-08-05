@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <nav id="navbar" className="flex flex-row justify-between items-center h-20 w-full text-light font-semibold text-base z-50">
             <div id="pages" className="flex flex-row gap-x-12">
-                <LogoButton color="white" type='banner' onClick={() => navigate('/')}/>
+                <LogoButton color="white" type='banner' onClick={() => navigate('/')} ariaLabel='Home Button'/>
                 {/* <button 
                     onClick={() => navigate('/products')}
                 >
@@ -24,14 +24,14 @@ const Navbar = () => {
             <div id="account" className="flex flex-row gap-x-4">
                 { token ?
                     <div className="flex flex-row items-center">
-                        <div id="profile" onClick={() => navigate('/profile')} className='hover:cursor-pointer'>
+                        <div id="profile" onClick={() => navigate('/app/profile')} className='hover:cursor-pointer' aria-label='Profile Icon'>
                             {JSON.stringify(token)}
                         </div>
                     </div>
                     :
                     <> 
-                        <ChevronArrowButton text="Create Account" onClick={() => navigate('/register')} />
-                        <ChevronArrowButton text="Sign in" onClick={() => navigate('/login')} background />
+                        <ChevronArrowButton text="Create Account" onClick={() => navigate('/register')} ariaLabel='Create Account Button'/>
+                        <ChevronArrowButton text="Sign in" onClick={() => navigate('/login')} background ariaLabel='Sign In Button'/>
                     </>
                 }
             </div>
