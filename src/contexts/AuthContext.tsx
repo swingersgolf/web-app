@@ -45,10 +45,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 				password
 			});
 			setToken(response.data.data.token);
-			return Promise.resolve(); // Return a resolved promise on success
+			return Promise.resolve();
 		} catch (error) {
 			console.error('Error logging in:', error);
-			return Promise.reject(error); // Return a rejected promise on failure
+			return Promise.reject(error);
 		}
 	};
 
@@ -66,10 +66,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 				email,
 				password
 			});
-			return Promise.resolve(); // Return a resolved promise on success
+			return Promise.resolve();
 		} catch (error) {
 			console.error('Error creating account:', error);
-			return Promise.reject(error); // Return a rejected promise on failure
+			return Promise.reject(error);
 		}
 	};
 
