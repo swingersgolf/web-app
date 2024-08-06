@@ -21,20 +21,16 @@ const Navbar = () => {
                     About
                 </button> */}
             </div>
-            <div id="account" className="flex flex-row gap-x-4">
                 { token ?
-                    <div className="flex flex-row items-center">
-                        <div id="profile" onClick={() => navigate('/app/profile')} className='hover:cursor-pointer' aria-label='Profile Icon'>
-                            {JSON.stringify(token)}
-                        </div>
+                    <div id="account" onClick={() => navigate('/app/account')} className='flex flex-row items-center hover:cursor-pointer' aria-label='Account Icon'>
+                        {JSON.stringify(token)}
                     </div>
                     :
-                    <> 
+                    <div id="account" className="flex flex-row gap-x-4">
                         <ChevronArrowButton text="Create Account" onClick={() => navigate('/register')} ariaLabel='Create Account Button'/>
                         <ChevronArrowButton text="Sign in" onClick={() => navigate('/login')} background ariaLabel='Sign In Button'/>
-                    </>
+                    </div>
                 }
-            </div>
         </nav>
     );
 }

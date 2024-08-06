@@ -10,10 +10,8 @@ const Navbar = () => {
             <div id="pages" className="flex flex-row gap-x-12">
                 <LogoButton color="green" type='icon' onClick={() => navigate('/app')} ariaLabel='App Home Button'/>
             </div>
-            <div id="account" className="flex flex-row gap-x-4">
-                <div id="profile" onClick={() => navigate('/app/profile')} className='hover:cursor-pointer' aria-label='Profile Icon'>
-                    {JSON.stringify(token)}
-                </div>
+            <div id="account" onClick={() => navigate('/app/account')} className='hover:cursor-pointer' aria-label='Account Icon'>
+                {JSON.stringify(token)}
             </div>
         </nav>
     );

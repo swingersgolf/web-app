@@ -6,9 +6,9 @@ import Register from "@pages/marketing/Register";
 import Login from "@pages/marketing/Login";
 import ScrollToTop from "@utils/ScrollToTop";
 import { AuthProvider } from "@contexts/AuthContext";
-import Profile from "@pages/app/Profile";
 import PrivateRoute from "@components/PrivateRoute";
 import Home from "@pages/app/Home";
+import Account from "@pages/app/Account";
 
 const App = () => {
   return (
@@ -23,7 +23,7 @@ const App = () => {
               <Route path="/contact" element={<Contact/>} />
               <Route path="/privacy" element={<Privacy/>} />
               <Route path="/app" element={<PrivateRoute Component={Home}/>} />
-              <Route path="/app/profile" element={<PrivateRoute Component={Profile}/>} />
+              <Route path="/app/account" element={<PrivateRoute Component={Account}/>} />
             </Routes>
           </Router>
         </AuthProvider>
