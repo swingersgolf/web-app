@@ -28,7 +28,7 @@ const Form: FC<FormProps> = ({ formFields, validationSchema, onSubmit, error, bu
 					register={register(field.name)}
 				/>
 			))}
-			<TextButton type="submit" text={buttonText}/>
+			<TextButton type="submit" text={buttonText} ariaLabel="Submit Button"/>
 		</form>
 	);
 };

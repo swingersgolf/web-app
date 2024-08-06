@@ -11,7 +11,7 @@ interface FormFieldProps {
 
 const FormField: FC<FormFieldProps> = ({ label, type, error, register }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col" aria-label={label}>
       <label><p>{label}</p></label>
       {type === 'textarea' ? (
         <textarea

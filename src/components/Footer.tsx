@@ -11,13 +11,19 @@ const Footer = () => {
                 <p id="copyright" className="hover:text-text text-md font-medium">© 2021 SwingersGolf, Inc.</p>
             </div>
             <div className="flex flex-row gap-x-8">
-                {/* <div id="pages" className="flex flex-col justify-start items-start gap-y-2">
-                    <p className="text-md font-semibold">Pages</p>
+                <div id="marketing" className="flex flex-col justify-start items-start gap-y-2">
+                    <p className="text-md font-semibold">Marketing</p>
                     <div className="flex flex-col justify-start items-start gap-y-1">
-                        <button className="hover:text-text text-md font-medium" onClick={() => navigate("/products")}>Products</button>
-                        <button className="hover:text-text text-md font-medium" onClick={() => navigate("/about")}>About</button>
+                        <button className="hover:text-text text-md font-medium" onClick={() => navigate("/")}>Home</button>
                     </div>                
-                </div> */}
+                </div>
+                <div id="app" className="flex flex-col justify-start items-start gap-y-2">
+                    <p className="text-md font-semibold">App</p>
+                    <div className="flex flex-col justify-start items-start gap-y-1">
+                        <button className="hover:text-text text-md font-medium" onClick={() => navigate("/app")}>Home</button>
+                        <button className="hover:text-text text-md font-medium" onClick={() => navigate("/app/profile")}>Profile</button>
+                    </div>                
+                </div>
                 <div id="resources" className="flex flex-col justify-start items-start gap-y-2">
                     <p className="text-md font-semibold">Resources</p>
                     <div className="flex flex-col justify-start items-start gap-y-1">

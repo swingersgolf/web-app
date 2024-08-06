@@ -27,8 +27,12 @@ const Login = () => {
     const { signIn } = useAuth();
 
     const handleSignIn: SubmitHandler<FormValues> = async (data) => {
-        signIn(data.email, data.password);
-        navigate('/app');
+        try {
+            await signIn(data.email, data.password);
+            navigate('/app');
+        } catch (error) {
+            setError('Failed to sign in. Please check your credentials and try again.');
+        }
     };
 
   return (
