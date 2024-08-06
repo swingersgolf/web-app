@@ -44,7 +44,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 				email,
 				password
 			});
-			console.log(response);
 			setToken(response.data.data.token);
 			return Promise.resolve(); // Return a resolved promise on success
 		} catch (error) {
@@ -67,7 +66,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 				email,
 				password
 			});
-			console.log(response);
 			return Promise.resolve(); // Return a resolved promise on success
 		} catch (error) {
 			console.error('Error creating account:', error);
