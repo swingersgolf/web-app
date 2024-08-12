@@ -26,20 +26,27 @@ const formFields = [
 
 const Register = () => {
     const navigate = useNavigate();
-    const [ loading, setLoading ] = useState(false);
-    const [ error, setError ] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
     const { createAccount, signIn } = useAuth();
 
     const handleCreateAccount: SubmitHandler<FormValues> = async (data) => {
         setLoading(true);
+        setError(''); // Clear any previous errors
         try {
             await createAccount(data.name, data.email, data.password);
             await signIn(data.email, data.password);
             navigate('/app');
-        } catch (error) {
-            setError('Failed to create account. Please try again.');
+        } catch (error: any) {
+            if (axios.isAxiosError(error) && error.response) {
+                const errorMessage = error.response.data.message || 'Failed to create account. Please try again.';
+                setError(errorMessage);
+            } else {
+                setError('An unexpected error occurred. Please try again.');
+            }
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     return (
@@ -49,7 +56,11 @@ const Register = () => {
                 <img src={BannerLogo} alt="banner-logo" className="w-40" />
                 <Card id="create-account-form" className="w-form-card h-fit gap-y-6">
                     <h3>Create your account</h3>
-                    { loading ? <div className="w-full h-full flex justify-center items-center"><Spinner /></div> :
+                    {loading ? (
+                        <div className="w-full h-full flex justify-center items-center">
+                            <Spinner />
+                        </div>
+                    ) : (
                         <Form
                             formFields={formFields}
                             validationSchema={yupResolver(registerValidationSchema)}
@@ -57,9 +68,10 @@ const Register = () => {
                             error={error}
                             buttonText="Create account"
                         />
-                    }
-                    <p>By clicking create account you are agreeing to follow our
-                        <a className='text-dark-green' href='/privacy'> privacy & terms</a>.
+                    )}
+                    <p>
+                        By clicking create account you are agreeing to follow our
+                        <a className="text-dark-green" href="/privacy"> privacy & terms</a>.
                     </p>
                     <div className="flex justify-center items-center text-center">
                         Already have an account?&nbsp;<a href="/login" className="text-light-green">Sign in</a>

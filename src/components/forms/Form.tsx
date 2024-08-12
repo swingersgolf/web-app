@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useForm, SubmitHandler, Resolver } from 'react-hook-form';
 import TextButton from '@components/buttons/TextButton';
 import FormField from '@components/forms/FormField';
+import { FiAlertTriangle } from 'react-icons/fi';
 
 interface FormProps {
 	formFields: { label: string; type: string; name: string }[];
@@ -10,7 +11,6 @@ interface FormProps {
 	error?: string;
 	buttonText: string;
 }
-
 
 const Form: FC<FormProps> = ({ formFields, validationSchema, onSubmit, error, buttonText }) => {
 	const { register, handleSubmit, formState: { errors } } = useForm({
@@ -28,7 +28,12 @@ const Form: FC<FormProps> = ({ formFields, validationSchema, onSubmit, error, bu
 					register={register(field.name)}
 				/>
 			))}
-			<TextButton type="submit" text={buttonText} ariaLabel="Submit Button"/>
+			{error && (
+				<p className="text-alert text-sm flex items-center gap-x-2">
+					<FiAlertTriangle className="inline" /> {error}
+				</p>
+			)}
+			<TextButton type="submit" text={buttonText} ariaLabel="Submit Button" />
 		</form>
 	);
 };

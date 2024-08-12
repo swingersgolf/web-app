@@ -61,7 +61,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 email,
                 password
             });
-            setToken(response.data.data.token);
+            setToken(response.data.token);
         } catch (error) {
             console.error('Error logging in:', error);
             return Promise.reject(error);
