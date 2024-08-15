@@ -30,13 +30,20 @@ const Login = () => {
 
     const handleSignIn: SubmitHandler<FormValues> = async (data) => {
         setLoading(true);
+        setError(''); // Clear any previous errors
         try {
             await signIn(data.email, data.password);
             navigate('/app');
-        } catch (error) {
-            setError('Failed to sign in. Please check your credentials and try again.');
+        } catch (error: any) {
+            if (axios.isAxiosError(error) && error.response) {
+                const errorMessage = error.response.data.message || 'Failed to create account. Please try again.';
+                setError(errorMessage);
+            } else {
+                setError('An unexpected error occurred. Please try again.');
+            }
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     };
 
   return (
