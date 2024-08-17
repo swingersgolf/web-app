@@ -20,6 +20,7 @@ interface AuthContextType {
     user: User | null;
     profile: Profile | null;
     signIn: (email: string, password: string) => Promise<void>;
+    signInWithGoogle: () => Promise<void>;
     signOut: () => void;
     createAccount: (name: string, email: string, password: string) => Promise<void>;
     fetchUser: () => Promise<void>;
@@ -62,6 +63,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 password
             });
             setToken(response.data.token);
+        } catch (error) {
+            console.error('Error logging in:', error);
+            return Promise.reject(error);
+        }
+    };
+
+    const signInWithGoogle = async () => {
+        try {
+            const response = await axios.post('http://127.0.0.1:8000/google/redirect');
         } catch (error) {
             console.error('Error logging in:', error);
             return Promise.reject(error);
@@ -116,7 +126,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     };
 
     return (
-        <AuthContext.Provider value={{ token, user, profile, signIn, signOut, createAccount, fetchUser, fetchProfile }}>
+        <AuthContext.Provider value={{ token, user, profile, signIn, signInWithGoogle, signOut, createAccount, fetchUser, fetchProfile }}>
             {children}
         </AuthContext.Provider>
     );

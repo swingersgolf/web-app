@@ -11,6 +11,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Form from '@components/forms/Form';
 import { useAuth } from '@contexts/AuthContext';
 import Spinner from '@components/Spinner';
+import { SiGoogle, SiFacebook, SiTwitter, SiGithub } from 'react-icons/si';
 
 type FormValues = {
     email: string;
@@ -22,11 +23,18 @@ const formFields = [
     { label: 'Password', type: 'password', name: 'password' },
 ];
 
+const socialMediaProviders = [
+    { name: 'Google', icon: SiGoogle, signInMethod: 'signInWithGoogle' },
+    { name: 'Facebook', icon: SiFacebook, signInMethod: 'signInWithFacebook' },
+    { name: 'Twitter', icon: SiTwitter, signInMethod: 'signInWithTwitter' },
+    { name: 'GitHub', icon: SiGithub, signInMethod: 'signInWithGithub' },
+];
+
 const Login = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-    const { signIn } = useAuth();
+    const { signIn, signInWithGoogle } = useAuth();
 
     const handleSignIn: SubmitHandler<FormValues> = async (data) => {
         setLoading(true);
@@ -36,7 +44,7 @@ const Login = () => {
             navigate('/app');
         } catch (error: any) {
             if (axios.isAxiosError(error) && error.response) {
-                const errorMessage = error.response.data.message || 'Failed to create account. Please try again.';
+                const errorMessage = error.response.data.message || 'Failed to sign in. Please try again.';
                 setError(errorMessage);
             } else {
                 setError('An unexpected error occurred. Please try again.');
@@ -46,30 +54,59 @@ const Login = () => {
         }
     };
 
-  return (
-    <Page id="login">
-        <div className="trapezoid-background bg-dark-green" />
-        <div id="login-content" className="flex flex-col justify-start gap-y-8 py-16">
-            <img src={BannerLogo} alt="banner-logo" className="w-40" />
-            <Card id="sign-in-form" className="w-form-card h-fit gap-y-8">
-                <h3>Sign in to your account</h3>
-                { loading ? <div className="w-full h-full flex justify-center items-center"><Spinner /></div> :
-                    <Form
-                        formFields={formFields}
-                        validationSchema={yupResolver(loginValidationSchema)}
-                        onSubmit={handleSignIn}
-                        error={error}
-                        buttonText="Sign In"
-                    />
-                }
-                <div className="flex justify-center items-center text-center">
-                    New to Swingers?&nbsp;<a href="/register" className="text-light-green">Create an account</a>
-                </div>
-            </Card>
-            <Legal />
-        </div>
-    </Page>
-  );
+    const handleSocialSignIn = async (signInMethod: () => Promise<void>) => {
+        setLoading(true);
+        setError('');
+        try {
+            await signInMethod();
+        } catch (error: any) {
+            setError('An unexpected error occurred. Please try again.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <Page id="login">
+            <div className="trapezoid-background bg-dark-green" />
+            <div id="login-content" className="flex flex-col justify-start gap-y-8 py-16">
+                <img src={BannerLogo} alt="banner-logo" className="w-40" />
+                <Card id="sign-in-form" className="w-form-card h-fit gap-y-8">
+                    <h3>Sign in to your account</h3>
+                    {loading ? (
+                        <div className="w-full h-full flex justify-center items-center"><Spinner /></div>
+                    ) : (
+                        <>
+                            <Form
+                                formFields={formFields}
+                                validationSchema={yupResolver(loginValidationSchema)}
+                                onSubmit={handleSignIn}
+                                error={error}
+                                buttonText="Sign In"
+                            />
+                            <div id="social-media-sign-in" className="flex flex-row justify-evenly">
+                                {socialMediaProviders.map((provider, index) => {
+                                    const IconComponent = provider.icon;
+                                    return (
+                                        <IconComponent
+                                            key={index}
+                                            size={32}
+                                            className="cursor-pointer hover:text-light-green transition-colors duration-300"
+                                            onClick={() => handleSocialSignIn((signIn as any)[provider.signInMethod])}
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </>
+                    )}
+                    <div className="flex justify-center items-center text-center">
+                        New to Swingers?&nbsp;<a href="/register" className="text-light-green">Create an account</a>
+                    </div>
+                </Card>
+                <Legal />
+            </div>
+        </Page>
+    );
 };
 
 export default Login;
