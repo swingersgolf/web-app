@@ -55,27 +55,30 @@ const Register = () => {
             <div id="register-content" className="flex flex-col justify-start gap-y-6 py-16">
                 <img src={BannerLogo} alt="banner-logo" className="w-40" />
                 <Card id="create-account-form" className="w-form-card h-fit gap-y-6">
-                    <h3>Create your account</h3>
                     {loading ? (
-                        <div className="w-full h-full flex justify-center items-center">
-                            <Spinner />
-                        </div>
+                        <>
+                            <h3 className="text-center">Creating account</h3>
+                            <div className="w-full h-full flex justify-center items-center"><Spinner /></div>
+                        </>
                     ) : (
-                        <Form
-                            formFields={formFields}
-                            validationSchema={yupResolver(registerValidationSchema)}
-                            onSubmit={handleCreateAccount}
-                            error={error}
-                            buttonText="Create account"
-                        />
+                        <>
+                            <h3>Create your account</h3>
+                            <Form
+                                formFields={formFields}
+                                validationSchema={yupResolver(registerValidationSchema)}
+                                onSubmit={handleCreateAccount}
+                                error={error}
+                                buttonText="Create account"
+                            />
+                            <p>
+                                By clicking create account you are agreeing to follow our
+                                <a className="text-dark-green" href="/privacy"> privacy & terms</a>.
+                            </p>
+                            <div className="flex justify-center items-center text-center">
+                                Already have an account?&nbsp;<a href="/login" className="text-light-green">Sign in</a>
+                            </div>
+                        </>
                     )}
-                    <p>
-                        By clicking create account you are agreeing to follow our
-                        <a className="text-dark-green" href="/privacy"> privacy & terms</a>.
-                    </p>
-                    <div className="flex justify-center items-center text-center">
-                        Already have an account?&nbsp;<a href="/login" className="text-light-green">Sign in</a>
-                    </div>
                 </Card>
                 <Legal />
             </div>

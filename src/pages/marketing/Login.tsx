@@ -72,11 +72,14 @@ const Login = () => {
             <div id="login-content" className="flex flex-col justify-start gap-y-8 py-16">
                 <img src={BannerLogo} alt="banner-logo" className="w-40" />
                 <Card id="sign-in-form" className="w-form-card h-fit gap-y-8">
-                    <h3>Sign in to your account</h3>
                     {loading ? (
-                        <div className="w-full h-full flex justify-center items-center"><Spinner /></div>
+                        <>
+                            <h3 className="text-center">Signing in</h3>
+                            <div className="w-full h-full flex justify-center items-center"><Spinner /></div>
+                        </>
                     ) : (
                         <>
+                            <h3>Sign in to your account</h3>
                             <Form
                                 formFields={formFields}
                                 validationSchema={yupResolver(loginValidationSchema)}
@@ -97,11 +100,11 @@ const Login = () => {
                                     );
                                 })}
                             </div>
+                            <div className="flex justify-center items-center text-center">
+                                New to Swingers?&nbsp;<a href="/register" className="text-light-green">Create an account</a>
+                            </div>
                         </>
                     )}
-                    <div className="flex justify-center items-center text-center">
-                        New to Swingers?&nbsp;<a href="/register" className="text-light-green">Create an account</a>
-                    </div>
                 </Card>
                 <Legal />
             </div>
