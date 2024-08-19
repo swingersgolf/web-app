@@ -3,28 +3,22 @@ import axios from 'axios';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-interface Profile {
+interface Account {
     name: string;
     age: number;
+    email: string;
     handicapIndex: number;
     // Add other profile fields as necessary
 }
 
-interface User {
-    email: string;
-    // Add other user fields as necessary
-}
-
 interface AuthContextType {
     token: string | null;
-    user: User | null;
-    profile: Profile | null;
+    account: Account | null;
     signIn: (email: string, password: string) => Promise<void>;
     signInWithGoogle: () => Promise<void>;
     signOut: () => void;
     createAccount: (name: string, email: string, password: string) => Promise<void>;
-    fetchUser: () => Promise<void>;
-    fetchProfile: () => Promise<void>;
+    fetchAccount: () => Promise<void>;
 }
 
 export const useAuth = (): AuthContextType => {
@@ -43,16 +37,14 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     const [token, setToken] = useState<string | null>(() => {
         return localStorage.getItem('authToken');
     });
-    const [user, setUser] = useState<User | null>(null);
-    const [profile, setProfile] = useState<Profile | null>(null);
+    const [account, setAccount] = useState<Account | null>(null);
 
     useEffect(() => {
         if (token) {
             localStorage.setItem('authToken', token);
         } else {
             localStorage.removeItem('authToken');
-            setUser(null);
-            setProfile(null); // Clear user and profile when token is null
+            setAccount(null);
         }
     }, [token]);
 
@@ -95,38 +87,23 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         }
     };
 
-    const fetchUser = async () => {
+    const fetchAccount = async () => {        
         try {
             if (token) {
-                const response = await axios.get('http://127.0.0.1:8000/api/user', {
+                const response = await axios.get('http://127.0.0.1:8000/api/v1/user', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                setUser(response.data);
+                setAccount(response.data.data);
             }
         } catch (error) {
             console.error('Error fetching user:', error);
-        }
-    };
-
-    const fetchProfile = async () => {
-        try {
-            if (token) {
-                const response = await axios.get('http://127.0.0.1:8000/api/profile', {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                });
-                setProfile(response.data);
-            }
-        } catch (error) {
-            console.error('Error fetching profile:', error);
-        }
+        }        
     };
 
     return (
-        <AuthContext.Provider value={{ token, user, profile, signIn, signInWithGoogle, signOut, createAccount, fetchUser, fetchProfile }}>
+        <AuthContext.Provider value={{ token, account, signIn, signInWithGoogle, signOut, createAccount, fetchAccount }}>
             {children}
         </AuthContext.Provider>
     );

@@ -7,22 +7,19 @@ import TextButton from "@components/buttons/TextButton";
 import Footer from "@components/Footer";
 
 const Account = () => {
-    const { token, user, profile, fetchUser, fetchProfile, signOut } = useAuth();
+    const { account, fetchAccount, signOut } = useAuth();
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!user) {
-            fetchUser();
+        if (!account) {
+            fetchAccount();
         }
-        if (!profile) {
-            fetchProfile();
-        }
-    }, [user, profile, fetchUser, fetchProfile]);
+    }, [account, fetchAccount]);    
 
     const handleSignOut = () => {
         signOut();
         navigate('/');
-    }
+    }    
 
     return (
         <Page id="account">
@@ -30,16 +27,12 @@ const Account = () => {
             <div id="account-content" className="flex flex-col justify-start items-start w-full">
                 <h2>Account</h2>
                 <div>
-                    <h3>Token</h3>
-                    <p>{token}</p>
                     <h3>Email</h3>
-                    <p>{user && user.email}</p>
+                    <p>{account && account.email}</p>
                     <h3>Name</h3>
-                    <p>{profile && profile.name}</p>
-                    <h3>Age</h3>
-                    <p>{profile && profile.age}</p>
+                    <p>{account && account.name}</p>
                     <h3>Handicap Index</h3>
-                    <p>{profile && profile.handicapIndex}</p>
+                    <p>{account && account.handicapIndex}</p>
                     <h3>Password</h3>
                     <p>********</p>
                 </div>

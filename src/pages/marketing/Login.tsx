@@ -34,13 +34,14 @@ const Login = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-    const { signIn, signInWithGoogle } = useAuth();
+    const { signIn, signInWithGoogle, fetchAccount } = useAuth();
 
     const handleSignIn: SubmitHandler<FormValues> = async (data) => {
         setLoading(true);
         setError(''); // Clear any previous errors
         try {
             await signIn(data.email, data.password);
+            await fetchAccount();
             navigate('/app');
         } catch (error: any) {
             if (axios.isAxiosError(error) && error.response) {
