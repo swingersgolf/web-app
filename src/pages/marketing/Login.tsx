@@ -27,7 +27,7 @@ const socialMediaProviders = [
     { name: 'Google', icon: SiGoogle, signInMethod: 'signInWithGoogle' },
     { name: 'Facebook', icon: SiFacebook, signInMethod: 'signInWithFacebook' },
     { name: 'Twitter', icon: SiTwitter, signInMethod: 'signInWithTwitter' },
-    { name: 'GitHub', icon: SiGithub, signInMethod: 'signInWithGithub' },
+    // { name: 'GitHub', icon: SiGithub, signInMethod: 'signInWithGithub' },
 ];
 
 const Login = () => {
