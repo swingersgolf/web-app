@@ -11,6 +11,7 @@ interface LogoButtonProps {
 	onClick?: () => void;
 	title?: string;
 	ariaLabel: string;
+	className?: string;
 }
 
 const logoDetails = {
@@ -31,14 +32,14 @@ const logoDetails = {
 	},
 };
 
-const LogoButton = ({ color = 'green', type = 'banner', onClick }: LogoButtonProps) => {
+const LogoButton = ({ color = 'green', type = 'banner', onClick, className }: LogoButtonProps) => {
 	const logo = logoDetails[type] || logoDetails.banner; // Fallback to 'banner' if 'type' is invalid
 	const logoSrc = color === 'white' ? logo.white : logo.default;
 
 	return (
 		<button
 		onClick={onClick}
-		className="font-alternative font-black text-2xl"
+		className={`${className} font-alternative font-black text-2xl`}
 		aria-label="Swingers Golf Logo Button"
 		>
 			<img src={logoSrc} alt={logo.alt} className="h-8 w-auto" />

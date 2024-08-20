@@ -13,8 +13,8 @@ import Page from "@components/Page";
 const Hero = () => {
     return (
         <div id="hero" className="flex flex-col justify-start w-full relative">
-            <img src={HomePage} alt="home-page-mockup" className="w-[1000px] h-auto absolute left-2/3"/>
-            <div id="hero-content" className="flex flex-col w-1/2 gap-y-10">
+            <img src={HomePage} alt="home-page-mockup" className="w-[1000px] h-auto absolute left-2/3 hidden md:flex"/>
+            <div id="hero-content" className="flex flex-col md:w-1/2 gap-y-10">
                 <Caption text="Swingers endorsed by John Doe" route="/idk"/>
                 <h1>Golf matchmaker to fill your <AnimatedWordSwap words={["two", "three", "four"]}/>some</h1>
                 <p>Join the community of golfers on Swingers and meet new partners to improve your game. Track your progress, have fun, enhance your golfing experience, and make lifelong friends today!</p>
@@ -26,15 +26,15 @@ const Hero = () => {
 
 const PartnersGrid = () => {
     return (
-        <div id="partners-grid" className="grid grid-cols-4 grid-rows-2 gap-12 w-full py-24 place-items-center">
-            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto col-start-1 row-start-1'/>
-            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto col-start-2 row-start-1'/>
-            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto col-start-3 row-start-1'/>
-            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto col-start-4 row-start-1'/>
-            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto col-start-1 row-start-2'/>
-            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto col-start-2 row-start-2'/>
-            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto col-start-3 row-start-2'/>
-            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto col-start-4 row-start-2'/>
+        <div id="partners-grid" className="grid md:grid-cols-4 md:grid-rows-2 grid-cols-2 gap-12 w-full py-24 place-items-center">
+            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto md:col-start-1 md:row-start-1'/>
+            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto md:col-start-2 md:row-start-1'/>
+            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto md:col-start-3 md:row-start-1'/>
+            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto md:col-start-4 md:row-start-1'/>
+            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto md:col-start-1 md:row-start-2'/>
+            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto md:col-start-2 md:row-start-2'/>
+            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto md:col-start-3 md:row-start-2'/>
+            <img id="golf-now-logo" src={GolfNowLogo} alt='GolfNow Logo' className='w-44 h-auto md:col-start-4 md:row-start-2'/>
         </div>
     );
 }
