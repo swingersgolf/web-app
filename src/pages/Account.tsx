@@ -3,7 +3,6 @@ import { useAuth } from "@contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import TextButton from "@components/buttons/TextButton";
 import { FiX } from "react-icons/fi";
-import ChevronArrowButton from "@components/buttons/ChevronArrowButton";
 
 const Account = () => {
     const { account, signOut } = useAuth();
@@ -25,7 +24,6 @@ const Account = () => {
                     >
                         <FiX className="text-primary w-9 h-9"/>
                     </div>
-                    <p>Esc</p>
                 </div>
                 <h2>Account</h2>
                 <div id="account-info" className="flex flex-col gap-y-4">
@@ -37,9 +35,8 @@ const Account = () => {
                         </div>
                     ))}
                 </div>
-                <div className="bg-dark-green">
-                    <TextButton onClick={handleSignOut} text="Sign Out" ariaLabel="Sign Out Button"/>
-                </div>
+                <TextButton onClick={handleSignOut} text="Edit Account" ariaLabel="Edit Account Button"/>
+                <TextButton onClick={handleSignOut} text="Sign Out" ariaLabel="Sign Out Button"/>
             </div>
         </Page>
     );

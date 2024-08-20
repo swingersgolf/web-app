@@ -33,7 +33,7 @@ const Form: FC<FormProps> = ({ formFields, validationSchema, onSubmit, error, bu
 					<FiAlertTriangle className="inline" /> {error}
 				</p>
 			)}
-			<TextButton type="submit" text={buttonText} ariaLabel="Submit Button" />
+			<TextButton type="submit" text={buttonText} ariaLabel="Submit Button" className="w-full"/>
 		</form>
 	);
 };
