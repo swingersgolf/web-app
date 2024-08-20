@@ -41,7 +41,7 @@ const Login = () => {
         setError(''); // Clear any previous errors
         try {
             await signIn(data.email, data.password);
-            navigate('/app');
+            navigate('/');
         } catch (error: any) {
             if (axios.isAxiosError(error) && error.response) {
                 const errorMessage = error.response.data.message || 'Failed to sign in. Please try again.';

@@ -1,14 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPage from "@pages/marketing/LandingPage"
-import Contact from "@pages/marketing/Contact";
-import Privacy from "@pages/marketing/Privacy";
-import Register from "@pages/marketing/Register";
-import Login from "@pages/marketing/Login";
+import LandingPage from "@pages/LandingPage"
+import Contact from "@pages/Contact";
+import Privacy from "@pages/Privacy";
+import Register from "@pages/Register";
+import Login from "@pages/Login";
 import ScrollToTop from "@utils/ScrollToTop";
 import { AuthProvider } from "@contexts/AuthContext";
 import PrivateRoute from "@components/PrivateRoute";
-import Home from "@pages/app/Home";
-import Account from "@pages/app/Account";
+import Postings from "@pages/Postings";
+import Account from "@pages/Account";
 
 const App = () => {
   return (
@@ -22,8 +22,8 @@ const App = () => {
               <Route path="/login" element={<Login/>} />
               <Route path="/contact" element={<Contact/>} />
               <Route path="/privacy" element={<Privacy/>} />
-              <Route path="/app" element={<PrivateRoute Component={Home}/>} />
-              <Route path="/app/account" element={<PrivateRoute Component={Account}/>} />
+              <Route path="/postings" element={<Postings/>} />
+              <Route path="/account" element={<PrivateRoute Component={Account}/>} />
             </Routes>
           </Router>
         </AuthProvider>

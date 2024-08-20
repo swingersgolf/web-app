@@ -2,7 +2,6 @@ import { FC } from 'react';
 import Page from "@components/Page";
 import Footer from "@components/Footer";
 import Card from "@components/Card";
-import TextButton from "@components/buttons/TextButton";
 import SocialMedia from "@components/SocialMedia";
 import Form from "@components/forms/Form";
 import { contactValidationSchema } from '@utils/validationSchema';

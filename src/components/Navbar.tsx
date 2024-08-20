@@ -10,19 +10,14 @@ const Navbar = () => {
         <nav id="navbar" className="flex flex-row justify-between items-center h-20 w-full text-light font-semibold text-base z-50">
             <div id="pages" className="flex flex-row gap-x-12">
                 <LogoButton color="white" type='banner' onClick={() => navigate('/')} ariaLabel='Home Button'/>
-                {/* <button 
-                    onClick={() => navigate('/products')}
-                >
-                    Products
-                </button>
                 <button 
-                    onClick={() => navigate('/about')}
+                    onClick={() => navigate('/postings')}
                 >
-                    About
-                </button> */}
+                    Postings
+                </button>
             </div>
                 { token ?
-                    <div id="account" onClick={() => navigate('/app/account')} className='flex items-center justify-center hover:cursor-pointer h-8 w-8 rounded-full bg-dark-green text-primary' aria-label='Account Icon'>
+                    <div id="account" onClick={() => navigate('/account')} className='flex items-center justify-center hover:cursor-pointer h-8 w-8 rounded-full bg-dark-green text-primary' aria-label='Account Icon'>
                         {Array.from(account?.name ?? '')[0]}
                     </div>
                     :

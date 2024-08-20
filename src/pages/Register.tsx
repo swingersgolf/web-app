@@ -36,7 +36,7 @@ const Register = () => {
         try {
             await createAccount(data.name, data.email, data.password);
             await signIn(data.email, data.password);
-            navigate('/app');
+            navigate('/');
         } catch (error: any) {
             if (axios.isAxiosError(error) && error.response) {
                 const errorMessage = error.response.data.message || 'Failed to create account. Please try again.';

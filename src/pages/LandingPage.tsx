@@ -1,5 +1,4 @@
-import Navbar from "@components/marketing/Navbar";
-import LandingPageBackground from "@assets/LandingPageBackground.svg";
+import Navbar from "@components/Navbar";
 import HomePage from "@assets/mockups/HomePage.svg";
 import Caption from "@components/Caption";
 import AnimatedWordSwap from "@animations/AnimatedWordSwap/AnimatedWordSwap";
@@ -139,7 +138,6 @@ const Testimonials = () => {
 const LandingPage = () => {
     return (
         <Page id="landing-page">
-            {/* <img src={LandingPageBackground} id="hero-background" alt="hero-background" className="w-auto h-[1000px] absolute top-0 inline-block -z-50"/> */}
             <div className="hero-trapezoid-background bg-light-green absolute inset-0"></div>
             <Navbar/>
             <Hero/>

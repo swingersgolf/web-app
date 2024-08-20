@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import Page from "@components/Page";
-import Navbar from "@components/app/Navbar";
+import Navbar from "@components/Navbar";
 import { useAuth } from "@contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import TextButton from "@components/buttons/TextButton";
@@ -17,8 +16,7 @@ const Account = () => {
 
     return (
         <Page id="account">
-            <Navbar/>
-            <div id="account-content" className="flex flex-col justify-start items-start w-full">
+            <div id="account-content" className="flex flex-col justify-start items-start w-full min-h-screen">
                 <h2>Account</h2>
                 <div>
                     <h3>Email</h3>
