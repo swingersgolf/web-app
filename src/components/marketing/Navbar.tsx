@@ -5,7 +5,7 @@ import { useAuth } from '@contexts/AuthContext';
 
 const Navbar = () => {
     const navigate = useNavigate();
-    const { token } = useAuth();
+    const { token, account } = useAuth();
     return (
         <nav id="navbar" className="flex flex-row justify-between items-center h-20 w-full text-light font-semibold text-base z-50">
             <div id="pages" className="flex flex-row gap-x-12">
@@ -22,8 +22,8 @@ const Navbar = () => {
                 </button> */}
             </div>
                 { token ?
-                    <div id="account" onClick={() => navigate('/app/account')} className='flex flex-row items-center hover:cursor-pointer' aria-label='Account Icon'>
-                        {JSON.stringify(token)}
+                    <div id="account" onClick={() => navigate('/app/account')} className='flex items-center justify-center hover:cursor-pointer h-8 w-8 rounded-full bg-dark-green text-primary' aria-label='Account Icon'>
+                        {Array.from(account?.name ?? '')[0]}
                     </div>
                     :
                     <div id="account" className="flex flex-row gap-x-4">
