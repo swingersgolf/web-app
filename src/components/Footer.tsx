@@ -16,7 +16,6 @@ const Footer = () => {
                     <div className="flex flex-col justify-start items-start gap-y-1">
                         <button className="hover:text-text text-md font-medium" onClick={() => navigate("/")}>Home</button>
                         <button className="hover:text-text text-md font-medium" onClick={() => navigate("/postings")}>Postings</button>
-                        <button className="hover:text-text text-md font-medium" onClick={() => navigate("/account")}>Account</button>
                     </div>                
                 </div>
                 <div id="resources" className="flex flex-col justify-start items-start gap-y-2">

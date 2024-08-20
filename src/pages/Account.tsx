@@ -16,7 +16,7 @@ const Account = () => {
     return (
         <Page id="account">
             <div className="irregular-background bg-dark-green" />
-            <div id="account-content" className="flex flex-col justify-start items-start w-full relative my-16">
+            <div id="account-content" className="flex flex-col justify-start items-start w-full relative my-16 gap-y-8">
                 <div className="flex flex-col items-center absolute top-0 right-0">
                     <div
                         className="flex justify-center items-center font-medium bg-dark w-12 h-12 rounded-full bg-opacity-30 text-sm border border-opacity-10 border-dark backdrop-blur cursor-pointer"
@@ -27,15 +27,14 @@ const Account = () => {
                     <p>Esc</p>
                 </div>
                 <h2>Account</h2>
-                <div>
-                    <h3>Email</h3>
-                    <p>{account && account.email}</p>
-                    <h3>Name</h3>
-                    <p>{account && account.name}</p>
-                    <h3>Handicap Index</h3>
-                    <p>{account && account.handicapIndex}</p>
-                    <h3>Password</h3>
-                    <p>********</p>
+                <div id="account-info" className="flex flex-col gap-y-4">
+                    {/* use a map to display all fields in the account */}
+                    { account && Object.entries(account).map(([key, value]: [string, any]) => (
+                        <div key={key}>
+                            <h3>{key}</h3>
+                            <p>{value}</p>
+                        </div>
+                    ))}
                 </div>
                 <div className="bg-dark-green">
                     <TextButton onClick={handleSignOut} text="Sign Out" ariaLabel="Sign Out Button"/>

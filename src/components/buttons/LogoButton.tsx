@@ -31,7 +31,7 @@ const logoDetails = {
 	},
 };
 
-const LogoButton = ({ color = 'green', type = 'banner', onClick, ariaLabel }: LogoButtonProps) => {
+const LogoButton = ({ color = 'green', type = 'banner', onClick }: LogoButtonProps) => {
 	const logo = logoDetails[type] || logoDetails.banner; // Fallback to 'banner' if 'type' is invalid
 	const logoSrc = color === 'white' ? logo.white : logo.default;
 
@@ -39,7 +39,7 @@ const LogoButton = ({ color = 'green', type = 'banner', onClick, ariaLabel }: Lo
 		<button
 		onClick={onClick}
 		className="font-alternative font-black text-2xl"
-		aria-label={ariaLabel}
+		aria-label="Swingers Golf Logo Button"
 		>
 			<img src={logoSrc} alt={logo.alt} className="h-8 w-auto" />
 		</button>

@@ -8,7 +8,8 @@
       "@contexts/*": ["contexts/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@types/*": ["types/*"],
     },
     "jsx": "react-jsx",
     "module": "esnext",
