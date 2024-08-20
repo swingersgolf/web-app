@@ -15,7 +15,8 @@ const Account = () => {
 
     return (
         <Page id="account">
-            <div className="irregular-background bg-dark-green" />
+            <div className="hidden md:flex irregular-background bg-dark-green" />
+            <div className="flex md:hidden irregular-background-mobile bg-dark-green" />
             <div id="account-content" className="flex flex-col justify-start items-start w-full relative my-16 gap-y-8">
                 <div className="flex flex-col items-center absolute top-0 right-0">
                     <div

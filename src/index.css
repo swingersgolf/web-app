@@ -7,7 +7,7 @@
 
 @layer base {
   h1 {
-    @apply text-5xl sm:text-8xl md:text-8xl lg:text-8xl xl:text-8xl font-black font-alternative text-header;
+    @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl font-black font-alternative text-header;
   }
   h2 {
     @apply text-2xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl font-black font-alternative text-header;
