@@ -40,12 +40,17 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     const [account, setAccount] = useState<Account | null>(null);
 
     useEffect(() => {
-        if (token) {
-            localStorage.setItem('authToken', token);
-        } else {
-            localStorage.removeItem('authToken');
-            setAccount(null);
-        }
+        const initializeAuth = async () => {
+            if (token) {
+                localStorage.setItem('authToken', token);
+                await fetchAccount();
+            } else {
+                localStorage.removeItem('authToken');
+                setAccount(null);
+            }
+        };
+
+        initializeAuth();
     }, [token]);
 
     const signIn = async (email: string, password: string) => {

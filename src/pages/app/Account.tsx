@@ -7,14 +7,8 @@ import TextButton from "@components/buttons/TextButton";
 import Footer from "@components/Footer";
 
 const Account = () => {
-    const { account, fetchAccount, signOut } = useAuth();
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        if (!account) {
-            fetchAccount();
-        }
-    }, [account, fetchAccount]);    
+    const { account, signOut } = useAuth();
+    const navigate = useNavigate();    
 
     const handleSignOut = () => {
         signOut();
