@@ -28,9 +28,9 @@ export default {
       },
       width: {
         'mobile-page': '20rem',
-        'md-page': '46rem',
-        'lg-page': '68rem',
-        'form-card': '34rem',
+        'page-md': '46rem',
+        'page-lg': '68rem',
+        'form-card-lg': '34rem',
         'hero-image': '250rem',
       },
       height: {

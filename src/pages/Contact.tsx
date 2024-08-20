@@ -28,13 +28,13 @@ const Contact: FC = () => {
 
   return (
     <Page id="contact">
-      <div id="contact-content" className="flex flex-col lg:flex-row justify-center items-center min-h-screen lg:gap-y-0 gap-y-16">
+      <div id="contact-content" className="flex flex-col lg:flex-row justify-center items-center min-h-screen lg:gap-y-0 gap-y-8">
         <div className="flex flex-col lg:justify-start justify-center lg:items-start items-center gap-y-4">
           <h1>Get in touch</h1>
           <p>Have any questions or concerns?</p>
           <SocialMedia/>
         </div>
-        <Card id="contact-card" className="w-form-card h-fit gap-y-8">
+        <Card id="contact-card" className="lg:w-form-card-lg w-full h-fit gap-y-8">
           <div>
             <h3>Let us help you out</h3>
             <p>We just need a few details.</p>
