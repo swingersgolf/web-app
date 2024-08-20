@@ -31,7 +31,7 @@
     left: 0;
     width: 100vw;
     height: 375px;
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
     z-index: -1;
 }
 
