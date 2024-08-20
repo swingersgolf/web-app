@@ -4,29 +4,7 @@ import IconLogo from "@assets/branding/IconLogo.svg";
 const Footer = () => {
     const navigate = useNavigate();
     return (
-        // <div id="footer" className="flex flex-row justify-between w-full py-24 border-t border-dark">
-        //     <div id="contact-info" className="flex flex-col justify-between">
-        //         <LogoButton/>
-        //         <p id="copyright" className="hover:text-text text-md font-medium">© 2021 SwingersGolf, Inc.</p>
-        //     </div>
-        //     <div className="flex flex-row gap-x-8">
-        //         <div id="pages" className="flex flex-col justify-start items-start gap-y-2">
-        //             <p className="text-md font-semibold">Pages</p>
-        //             <div className="flex flex-col justify-start items-start gap-y-1">
-        //                 <button className="hover:text-text text-md font-medium" onClick={() => navigate("/")}>Home</button>
-        //                 <button className="hover:text-text text-md font-medium" onClick={() => navigate("/postings")}>Postings</button>
-        //             </div>                
-        //         </div>
-        //         <div id="resources" className="flex flex-col justify-start items-start gap-y-2">
-        //             <p className="text-md font-semibold">Resources</p>
-        //             <div className="flex flex-col justify-start items-start gap-y-1">
-        //                 <button className="hover:text-text text-md font-medium" onClick={() => navigate("/privacy")}>Privacy & terms</button>
-        //                 <button className="hover:text-text text-md font-medium" onClick={() => navigate("/contact")}>Contact</button>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
-        <div id="footer" className="flex justify-center items-center relative bottom-0 text-dark border-t border-opacity-50 border-dark 2xl:h-96 md:h-80 2xl:py-20 py-16">
+        <div id="footer" className="w-full flex justify-center items-center relative bottom-0 text-dark border-t border-opacity-50 border-dark 2xl:h-96 md:h-80 2xl:py-20 py-16">
             <div className="h-full justify-evenly items-center flex flex-col md:grid md:grid-cols-2 2xl:w-page-2xl lg:w-page-lg md:w-page-md w-page-default gap-y-8">
                 <div className="flex flex-row justify-start md:justify-end items-start gap-x-16 w-full h-full row-start-1 col-start-2">
                     <div className="flex flex-col justify-center items-start gap-y-4">

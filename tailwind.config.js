@@ -32,6 +32,10 @@ export default {
         'page-lg': '68rem',
         'form-card-lg': '34rem',
         'hero-image': '250rem',
+        'page-2xl': '1440px',
+        'page-lg': '880px',
+        'page-md': '80vw',
+        'page-default': '90vw',
       },
       height: {
 
