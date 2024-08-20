@@ -9,13 +9,13 @@ interface ChevronArrowButtonProps {
 }
 
 const ChevronArrowButton = ({ onClick, text, background, ariaLabel }: ChevronArrowButtonProps) => {
-    const backgroundClass = background ? 'bg-light' : 'bg-transparent';
-    const textClass = background ? 'text-light-green' : 'text-light';
+    const backgroundClass = background ? ' bg-dark bg-opacity-30 border border-opacity-10 border-dark' : 'bg-transparent';
+    const textClass = background ? 'text-light' : 'text-light';
 
     return (
         <button 
             onClick={onClick} 
-            className={`flex flex-row justify-between items-center button-arrow ${backgroundClass} ${textClass} gap-x-1 py-1 px-4 rounded-full`}
+            className={`flex flex-row justify-between items-center button-arrow ${backgroundClass} ${textClass} gap-x-1 py-1 px-4 rounded-full backdrop-blur`}
             aria-label={ariaLabel}
         >
             {text}
