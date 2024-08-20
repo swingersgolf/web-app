@@ -27,7 +27,9 @@ export default {
         'alert': '#D70040',
       },
       width: {
-        '272': '68rem',
+        'mobile-page': '20rem',
+        'md-page': '46rem',
+        'lg-page': '68rem',
         'form-card': '34rem',
         'hero-image': '250rem',
       },

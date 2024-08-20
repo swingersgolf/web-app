@@ -28,8 +28,8 @@ const Contact: FC = () => {
 
   return (
     <Page id="contact">
-      <div id="contact-content" className="flex flex-row justify-center items-center min-h-screen">
-        <div className="flex flex-col gap-y-4">
+      <div id="contact-content" className="flex flex-col lg:flex-row justify-center items-center min-h-screen lg:gap-y-0 gap-y-16">
+        <div className="flex flex-col lg:justify-start justify-center lg:items-start items-center gap-y-4">
           <h1>Get in touch</h1>
           <p>Have any questions or concerns?</p>
           <SocialMedia/>
