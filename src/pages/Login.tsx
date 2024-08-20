@@ -71,7 +71,7 @@ const Login = () => {
             <div className="trapezoid-background bg-dark-green" />
             <div id="login-content" className="flex flex-col justify-start gap-y-8 py-16">
                 <img src={BannerLogo} alt="banner-logo" className="w-40" />
-                <Card id="sign-in-form" className="w-form-card h-fit gap-y-8">
+                <Card id="sign-in-form" className="md:w-form-card-lg h-fit gap-y-8">
                     {loading ? (
                         <>
                             <h3 className="text-center">Signing in</h3>

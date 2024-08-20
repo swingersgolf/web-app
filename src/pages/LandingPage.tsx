@@ -13,8 +13,8 @@ import Page from "@components/Page";
 const Hero = () => {
     return (
         <div id="hero" className="flex flex-col justify-start w-full relative">
-            <img src={HomePage} alt="home-page-mockup" className="w-[1000px] h-auto absolute left-2/3 hidden md:flex"/>
-            <div id="hero-content" className="flex flex-col md:w-1/2 gap-y-10">
+            <img src={HomePage} alt="home-page-mockup" className="w-[1000px] h-auto absolute left-[75%] hidden md:flex"/>
+            <div id="hero-content" className="flex flex-col md:w-[60%] gap-y-10">
                 <Caption text="Swingers endorsed by John Doe" route="/idk"/>
                 <h1>Golf matchmaker to fill your <AnimatedWordSwap words={["two", "three", "four"]}/>some</h1>
                 <p>Join the community of golfers on Swingers and meet new partners to improve your game. Track your progress, have fun, enhance your golfing experience, and make lifelong friends today!</p>
@@ -71,7 +71,8 @@ const ExpandYourNetwork = () => {
 const FindYourPartner = () => {
     return (
         <div id="find-your-partner" className="flex flex-col justify-center items-center text-center py-16 md:py-24 gap-y-8 md:gap-y-16">
-            <div className="parallelogram-background-mobile md:parallelogram-background bg-dark-green"></div>
+            <div className="hidden md:flex parallelogram-background bg-dark-green"></div>
+            <div className="flex md:hidden parallelogram-background-mobile bg-dark-green"></div>
             <div className="flex flex-col gap-y-0 md:gap-y-2">
                 <h2 className="text-light-header">Find your golf partner and start playing</h2>
                 <p className="text-light-text">Join our platform and discover a community of golfers ready to play. Sign up, find a golf partner, and start enjoying the game today.</p>
@@ -138,7 +139,8 @@ const Testimonials = () => {
 const LandingPage = () => {
     return (
         <Page id="landing-page">
-            <div className="hero-trapezoid-background-mobile md:hero-trapezoid-background bg-light-green absolute inset-0"></div>
+            <div className="hidden md:flex hero-trapezoid-background bg-light-green absolute inset-0"></div>
+            <div className="flex md:hidden hero-trapezoid-background-mobile bg-light-green absolute inset-0"></div>
             <Navbar/>
             <Hero/>
             <PartnersGrid/>

@@ -54,7 +54,7 @@ const Register = () => {
             <div className="trapezoid-background bg-dark-green" />
             <div id="register-content" className="flex flex-col justify-start gap-y-6 py-16">
                 <img src={BannerLogo} alt="banner-logo" className="w-40" />
-                <Card id="create-account-form" className="w-form-card h-fit gap-y-6">
+                <Card id="create-account-form" className="md:w-form-card-lg h-fit gap-y-6">
                     {loading ? (
                         <>
                             <h3 className="text-center">Creating account</h3>
