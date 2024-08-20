@@ -3,6 +3,7 @@ import { useAuth } from "@contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import TextButton from "@components/buttons/TextButton";
 import { FiX } from "react-icons/fi";
+import ChevronArrowButton from "@components/buttons/ChevronArrowButton";
 
 const Account = () => {
     const { account, signOut } = useAuth();
@@ -32,7 +33,7 @@ const Account = () => {
                     { account && Object.entries(account).map(([key, value]: [string, any]) => (
                         <div key={key}>
                             <h3>{key}</h3>
-                            <p>{value}</p>
+                            <p>{value ? value : "N/A"}</p>
                         </div>
                     ))}
                 </div>
