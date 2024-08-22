@@ -27,10 +27,12 @@ export default {
         'light-text': '#E5E4E2',
       },
       width: {
-        'mobile-page': '20rem',
+        'page-mobile': '20rem',
         'page-md': '46rem',
         'page-lg': '68rem',
         'form-card-lg': '34rem',
+        'form-card-md': '28rem',
+        'form-card-mobile': '20rem',
         'hero-image': '250rem',
         'page-2xl': '1440px',
         'page-lg': '880px',

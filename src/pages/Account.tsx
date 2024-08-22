@@ -4,6 +4,9 @@ import { useAuth } from "@contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import TextButton from "@components/buttons/TextButton";
 import { FiX } from "react-icons/fi";
+import Card from "@components/Card";
+import Navbar from "@components/Navbar";
+import Footer from "@components/Footer";
 
 const Account = () => {
     const { account, signOut, updateAccount, fetchAccount } = useAuth();
@@ -39,50 +42,48 @@ const Account = () => {
     const accountEntries = account ? Object.keys(account).map(key => [key, account[key]]) : [];
 
     return (
-        <Page id="account">
-            <div className="hidden md:flex irregular-background bg-dark-green" />
-            <div className="flex md:hidden irregular-background-mobile bg-dark-green" />
-            <div id="account-content" className="flex flex-col justify-start items-start w-full relative my-16 gap-y-8">
-                <div className="flex flex-col items-end absolute top-0 right-0 h-full justify-between">
-                    <div
-                        className="flex justify-center items-center font-medium bg-dark w-12 h-12 rounded-full bg-opacity-30 text-sm border border-opacity-10 border-dark backdrop-blur cursor-pointer"
-                        onClick={() => navigate('/')}
-                    >
-                        <FiX className="text-primary w-9 h-9"/>
+        <Page id="register">
+            <Navbar/>
+            <div className="trapezoid-background-2 bg-dark-green" />
+            <div className="mobile-trapezoid-background-2 bg-dark-green" />
+            <div id="register-content" className="flex flex-col justify-start gap-y-6 py-16">
+                <Card id="create-account-form" className="w-form-card-mobile md:w-form-card-md lg:w-form-card-lg h-fit gap-y-6">
+                    <h2>Account</h2>
+                    <div id="account-info" className="flex flex-col gap-y-4">
+                        {accountEntries.map(([key, value]: [string, any] | any[], _index: number, _array: any[][]) => (
+                            <div key={key}>
+                                <h3>{key}</h3>
+                                {isEditing ? (
+                                    <input
+                                        type="text"
+                                        value={editedAccount[key] ?? value ?? ""}
+                                        onChange={(e) => handleInputChange(key, e.target.value)}
+                                        className="border rounded p-2"
+                                    />
+                                ) : (
+                                    <p>{value ? value : "N/A"}</p>
+                                )}
+                            </div>
+                        ))}
                     </div>
-                    <TextButton onClick={handleSignOut} text="Sign out" ariaLabel="Sign out button" backgroundColor="bg-dark bg-opacity-30"/>
-                </div>
-                <h2>Account</h2>
-                <div id="account-info" className="flex flex-col gap-y-4">
-                    {accountEntries.map(([key, value]: [string, any] | any[], _index: number, _array: any[][]) => (
-                        <div key={key}>
-                            <h3>{key}</h3>
+                    <div className="flex gap-y-4 flex-col md:flex-row justify-between items-start md:items-center">
+                        <div className="flex flex-row items-center gap-x-4">
                             {isEditing ? (
-                                <input
-                                    type="text"
-                                    value={editedAccount[key] ?? value ?? ""}
-                                    onChange={(e) => handleInputChange(key, e.target.value)}
-                                    className="border rounded p-2"
-                                />
+                                <>
+                                    <TextButton onClick={handleSave} text="Save" ariaLabel="Save account changes button"/>
+                                    <TextButton onClick={handleCancel} text="Cancel" ariaLabel="Cancel editing account button" backgroundColor="bg-caption"/>
+                                </>
                             ) : (
-                                <p>{value ? value : "N/A"}</p>
+                                <>
+                                    <TextButton onClick={() => setIsEditing(true)} text="Edit Account" ariaLabel="Edit account button"/>
+                                </>
                             )}
                         </div>
-                    ))}
-                </div>
-                <div className="flex flex-row items-center gap-x-4">
-                    {isEditing ? (
-                        <>
-                            <TextButton onClick={handleSave} text="Save" ariaLabel="Save account changes button"/>
-                            <TextButton onClick={handleCancel} text="Cancel" ariaLabel="Cancel editing account button" backgroundColor="bg-caption"/>
-                        </>
-                    ) : (
-                        <>
-                            <TextButton onClick={() => setIsEditing(true)} text="Edit Account" ariaLabel="Edit account button"/>
-                        </>
-                    )}
-                </div>
+                        <TextButton onClick={handleSignOut} text="Sign out" ariaLabel="Sign out button" backgroundColor="bg-caption"/>
+                    </div>
+                </Card>
             </div>
+            <Footer/>
         </Page>
     );
 };

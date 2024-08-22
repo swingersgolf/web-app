@@ -36,7 +36,7 @@ const Register = () => {
         try {
             await createAccount(data.name, data.email, data.password);
             await signIn(data.email, data.password);
-            navigate('/');
+            navigate('/account');
         } catch (error: any) {
             if (axios.isAxiosError(error) && error.response) {
                 const errorMessage = error.response.data.message || 'Failed to create account. Please try again.';
@@ -54,7 +54,7 @@ const Register = () => {
             <div className="trapezoid-background bg-dark-green" />
             <div id="register-content" className="flex flex-col justify-start gap-y-6 py-16">
                 <img src={BannerLogo} alt="banner-logo" className="w-40" />
-                <Card id="create-account-form" className="md:w-form-card-lg h-fit gap-y-6">
+                <Card id="create-account-form" className="w-form-card-mobile md:w-form-card-md lg:w-form-card-lg h-fit gap-y-6">
                     {loading ? (
                         <>
                             <h3 className="text-center">Creating account</h3>

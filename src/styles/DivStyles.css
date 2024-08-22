@@ -45,6 +45,19 @@
     z-index: -1;
 }
 
+.trapezoid-background-2 {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 60%);
+    z-index: -1;
+}
+
+.mobile-trapezoid-background-2 {
+
+}
+
 .irregular-background {
     position: absolute;
     left: 0;
