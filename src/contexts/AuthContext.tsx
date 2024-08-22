@@ -101,15 +101,21 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         }        
     };
 
-    const updateAccount = async (updatedAccount: AccountType) => {
+    const updateAccount = async (updatedAccount: Record<string, any>) => {
+        console.log("Updating account:", updatedAccount, "with token:", token);
+    
         try {
             if (token) {
-                await axios.put('http://127.0.0.1:8000/api/v1/update', {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                    data: updatedAccount
-                });
+                await axios.patch(
+                    'http://127.0.0.1:8000/api/v1/user',
+                    updatedAccount,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                            'Content-Type': 'application/json' // Set Content-Type header
+                        }
+                    }
+                );
             }
         } catch (error) {
             console.error('Error updating user:', error);

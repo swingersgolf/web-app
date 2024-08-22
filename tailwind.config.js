@@ -17,6 +17,7 @@ export default {
         'dark': '#002100',
         'primary': '#f6f9fc',
         'caption': '#3E4A3D',
+        'alert': '#D70040',
       },
       textColor: {
         'header': '#002100',
@@ -24,7 +25,6 @@ export default {
         'caption': '#F4FBF3',
         'light-header': '#F4FBF3',
         'light-text': '#E5E4E2',
-        'alert': '#D70040',
       },
       width: {
         'mobile-page': '20rem',

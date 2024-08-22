@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Page from "@components/Page";
 import { useAuth } from "@contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -5,13 +6,37 @@ import TextButton from "@components/buttons/TextButton";
 import { FiX } from "react-icons/fi";
 
 const Account = () => {
-    const { account, signOut } = useAuth();
+    const { account, signOut, updateAccount, fetchAccount } = useAuth();
     const navigate = useNavigate();    
+
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedAccount, setEditedAccount] = useState<Partial<typeof account>>({});
 
     const handleSignOut = () => {
         signOut();
         navigate('/');
-    }    
+    };
+
+    const handleInputChange = (key: string, value: string) => {
+        setEditedAccount({
+            ...editedAccount,
+            [key]: value,
+        });
+    };
+
+    const handleSave = async () => {
+        await updateAccount(editedAccount);        
+        await fetchAccount();
+        setIsEditing(false);
+        setEditedAccount({});
+    };
+
+    const handleCancel = () => {
+        setEditedAccount({});
+        setIsEditing(false);
+    };
+
+    const accountEntries = account ? Object.keys(account).map(key => [key, account[key]]) : [];
 
     return (
         <Page id="account">
@@ -28,18 +53,35 @@ const Account = () => {
                 </div>
                 <h2>Account</h2>
                 <div id="account-info" className="flex flex-col gap-y-4">
-                    {/* use a map to display all fields in the account */}
-                    { account && Object.entries(account).map(([key, value]: [string, any]) => (
+                    {accountEntries.map(([key, value]: [string, any] | any[], _index: number, _array: any[][]) => (
                         <div key={key}>
                             <h3>{key}</h3>
-                            <p>{value ? value : "N/A"}</p>
+                            {isEditing ? (
+                                <input
+                                    type="text"
+                                    value={editedAccount[key] ?? value ?? ""}
+                                    onChange={(e) => handleInputChange(key, e.target.value)}
+                                    className="border rounded p-2"
+                                />
+                            ) : (
+                                <p>{value ? value : "N/A"}</p>
+                            )}
                         </div>
                     ))}
                 </div>
                 <div className="flex flex-row items-center gap-x-4">
-                    <TextButton text="Edit Account" ariaLabel="Edit account button"/>
-                    <TextButton onClick={handleSignOut} text="Sign out" ariaLabel="Sign out button"/>
-                </div>                
+                    {isEditing ? (
+                        <>
+                            <TextButton onClick={handleSave} text="Save" ariaLabel="Save account changes button"/>
+                            <TextButton onClick={handleCancel} text="Cancel" ariaLabel="Cancel editing account button" backgroundColor="bg-caption"/>
+                        </>
+                    ) : (
+                        <>
+                            <TextButton onClick={() => setIsEditing(true)} text="Edit Account" ariaLabel="Edit account button"/>
+                            <TextButton onClick={handleSignOut} text="Sign out" ariaLabel="Sign out button"/>
+                        </>
+                    )}
+                </div>
             </div>
         </Page>
     );
