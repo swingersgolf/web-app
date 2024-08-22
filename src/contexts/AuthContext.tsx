@@ -98,12 +98,11 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             }
         } catch (error) {
             console.error('Error fetching user:', error);
+            return Promise.reject(error);
         }        
     };
 
-    const updateAccount = async (updatedAccount: Record<string, any>) => {
-        console.log("Updating account:", updatedAccount, "with token:", token);
-    
+    const updateAccount = async (updatedAccount: Record<string, any>) => {    
         try {
             if (token) {
                 await axios.patch(
@@ -119,6 +118,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
             }
         } catch (error) {
             console.error('Error updating user:', error);
+            return Promise.reject(error);
         }
     };
 
