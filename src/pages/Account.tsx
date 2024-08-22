@@ -43,13 +43,14 @@ const Account = () => {
             <div className="hidden md:flex irregular-background bg-dark-green" />
             <div className="flex md:hidden irregular-background-mobile bg-dark-green" />
             <div id="account-content" className="flex flex-col justify-start items-start w-full relative my-16 gap-y-8">
-                <div className="flex flex-col items-center absolute top-0 right-0">
+                <div className="flex flex-col items-end absolute top-0 right-0 h-full justify-between">
                     <div
                         className="flex justify-center items-center font-medium bg-dark w-12 h-12 rounded-full bg-opacity-30 text-sm border border-opacity-10 border-dark backdrop-blur cursor-pointer"
                         onClick={() => navigate('/')}
                     >
                         <FiX className="text-primary w-9 h-9"/>
                     </div>
+                    <TextButton onClick={handleSignOut} text="Sign out" ariaLabel="Sign out button" backgroundColor="bg-dark bg-opacity-30"/>
                 </div>
                 <h2>Account</h2>
                 <div id="account-info" className="flex flex-col gap-y-4">
@@ -78,7 +79,6 @@ const Account = () => {
                     ) : (
                         <>
                             <TextButton onClick={() => setIsEditing(true)} text="Edit Account" ariaLabel="Edit account button"/>
-                            <TextButton onClick={handleSignOut} text="Sign out" ariaLabel="Sign out button"/>
                         </>
                     )}
                 </div>
