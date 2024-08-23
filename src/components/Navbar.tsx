@@ -11,13 +11,13 @@ const Navbar = () => {
 
     const accountMenuOptions = [
         { name: 'Account', handleClick: () => navigate('/account') },
-        { name: 'Log Out', handleClick: () => signOut() }
+        { name: 'Sign Out', handleClick: () => signOut() }
     ];
 
     const authenticatedMobileMenuOptions = [
         { name: 'Postings', handleClick: () => navigate('/postings') },
         { name: 'Account', handleClick: () => navigate('/account') },
-        { name: 'Log Out', handleClick: () => signOut() }
+        { name: 'Sign Out', handleClick: () => signOut() }
     ];
 
     const unauthenticatedMobileMenuOptions = [
