@@ -9,14 +9,17 @@ import GolfNowLogo from '@assets/logos/GolfNowLogo.svg';
 import Footer from "@components/Footer";
 import "@styles/DivStyles.css";
 import Page from "@components/Page";
+import useGradient from "@hooks/useGradient";
 
 const Hero = () => {
     return (
         <div id="hero" className="flex flex-col justify-start w-full relative">
-            <img src={HomePage} alt="home-page-mockup" className="w-[1000px] h-auto absolute left-[75%] hidden md:flex"/>
+            <img src={HomePage} alt="home-page-mockup" className="w-[1000px] h-auto absolute left-2/3 hidden md:flex"/>
             <div id="hero-content" className="flex flex-col md:w-[60%] gap-y-10">
                 <Caption text="Swingers endorsed by John Doe" route="/idk"/>
-                <h1>Golf matchmaker to fill your <AnimatedWordSwap words={["two", "three", "four"]}/>some</h1>
+                <h1>Golf matchmaker to fill your 
+                    <AnimatedWordSwap words={["two", "three", "four"]}/>some
+                </h1>
                 <p>Join the community of golfers on Swingers and meet new partners to improve your game. Track your progress, have fun, enhance your golfing experience, and make lifelong friends today!</p>
                 <DownloadButtons/>
             </div>
@@ -137,10 +140,11 @@ const Testimonials = () => {
 }
 
 const LandingPage = () => {
+    useGradient("#gradient-canvas");
     return (
         <Page id="landing-page">
-            <div className="hidden md:flex hero-trapezoid-background bg-light-green absolute inset-0"></div>
-            <div className="flex md:hidden hero-trapezoid-background-mobile bg-light-green absolute inset-0"></div>
+            <canvas className="hero-gradient hidden md:flex absolute inset-0" id="gradient-canvas" data-transition-in />
+            <canvas className="hero-gradient-mobile flex md:hidden absolute inset-0" id="gradient-canvas" data-transition-in />
             <Navbar/>
             <Hero/>
             <PartnersGrid/>

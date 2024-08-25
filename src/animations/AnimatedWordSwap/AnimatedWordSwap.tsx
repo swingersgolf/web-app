@@ -23,7 +23,7 @@ const AnimatedWordSwap = ({words}: { words: string[] }) => {
                 });
                 setAnimation('fade-in');
             }, 300); // Matches fade-out duration
-        }, 2000); // Change word every 2 seconds
+        }, 4000); // Change word every 4 seconds
 
         return () => clearInterval(intervalId);
     }, [words]);
