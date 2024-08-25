@@ -77,10 +77,9 @@ const Account = () => {
                                             type="text"
                                             value={editedAccount[key] ?? value ?? ""}
                                             onChange={(e) => handleInputChange(key, e.target.value)}
-                                            className="border rounded p-2"
                                         />
                                     ) : (
-                                        <p>{value ? value : "N/A"}</p>
+                                        <p className="px-4 py-3 rounded-md border border-white">{value ? value : "N/A"}</p>
                                     )}
                                 </div>
                             ))}
@@ -90,7 +89,7 @@ const Account = () => {
                                 {isEditing ? (
                                     <>
                                         <TextButton onClick={handleSave} text="Save" ariaLabel="Save account changes button"/>
-                                        <TextButton onClick={handleCancel} text="Cancel" ariaLabel="Cancel editing account button" backgroundColor="bg-neutral-medium"/>
+                                        <TextButton onClick={handleCancel} text="Cancel" ariaLabel="Cancel editing account button" backgroundColor="bg-neutral-mediumDark"/>
                                     </>
                                 ) : (
                                     <>
@@ -98,7 +97,7 @@ const Account = () => {
                                     </>
                                 )}
                             </div>
-                            <TextButton onClick={handleSignOut} text="Sign out" ariaLabel="Sign out button" backgroundColor="bg-neutral-medium"/>
+                            <TextButton onClick={handleSignOut} text="Sign out" ariaLabel="Sign out button" backgroundColor="bg-neutral-mediumDark"/>
                         </div>
                     </>
                 }
