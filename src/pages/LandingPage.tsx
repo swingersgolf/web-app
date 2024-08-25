@@ -10,6 +10,7 @@ import Footer from "@components/Footer";
 import "@styles/DivStyles.css";
 import Page from "@components/Page";
 import useGradient from "@hooks/useGradient";
+import { Gradient } from "@components/Gradient";
 
 const Hero = () => {
     return (
@@ -142,7 +143,7 @@ const LandingPage = () => {
     useGradient("#gradient-canvas");
     return (
         <Page id="landing-page">
-            <canvas className="hero-gradient flex absolute inset-0" id="gradient-canvas" data-transition-in />
+            <canvas className="hero-gradient flex absolute inset-0" id="gradient-canvas" data-transition-in data-js-darken-top/>
             <Navbar/>
             <Hero/>
             <PartnersGrid/>
