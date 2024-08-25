@@ -75,23 +75,23 @@ const ExpandYourNetwork = () => {
 const FindYourPartner = () => {
     return (
         <div id="find-your-partner" className="flex flex-col justify-center items-center text-center py-16 md:py-24 gap-y-8 md:gap-y-16">
-            <div className="flex parallelogram-background bg-secondary-blue"></div>
+            <div className="flex parallelogram-background bg-secondary-yellow"></div>
             <div className="flex flex-col gap-y-0 md:gap-y-2">
-                <h2 className="text-neutral-light">Find your golf partner and start playing</h2>
-                <p className="text-neutral-light">Join our platform and discover a community of golfers ready to play. Sign up, find a golf partner, and start enjoying the game today.</p>
+                <h2 className="">Find your golf partner and start playing</h2>
+                <p className="">Join our platform and discover a community of golfers ready to play. Sign up, find a golf partner, and start enjoying the game today.</p>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-center gap-y-4 md:gap-x-8 w-full">
                 <div className="flex flex-col items-center justify-center gap-y-0 md:gap-y-2 md:w-1/3">
                     <h4>Sign up and create your profile</h4>
-                    <p className="text-neutral-light">Create your profile and let others know your golfing preferences and availability.</p>
+                    <p className="">Create your profile and let others know your golfing preferences and availability.</p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-y-0 md:gap-y-2 md:w-1/3">
                     <h4>Find golf partners near you</h4>
-                    <p className="text-neutral-light">Browse through a list of golfers in your area and connect with potential partners.</p>
+                    <p className="">Browse through a list of golfers in your area and connect with potential partners.</p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-y-0 md:gap-y-2 md:w-1/3">
                     <h4>Schedule a game and enjoy golfing</h4>
-                    <p className="text-neutral-light">Coordinate with your golf partner, choose a golf course, and have a great time playing golf together.</p>
+                    <p className="">Coordinate with your golf partner, choose a golf course, and have a great time playing golf together.</p>
                 </div>
             </div>
             <div>

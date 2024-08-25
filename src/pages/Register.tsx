@@ -4,7 +4,7 @@ import Page from '@components/Page';
 import Card from '@components/Card';
 import BannerLogo from '@assets/branding/BannerLogo.svg';
 import Legal from '@components/Legal';
-import { registerValidationSchema } from '@utils/validationSchema';
+import { registerValidationSchema } from '@utils/validationSchemas';
 import { useNavigate } from 'react-router-dom';
 import { SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
