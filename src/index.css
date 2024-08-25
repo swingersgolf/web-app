@@ -16,7 +16,7 @@
     @apply text-lg sm:text-lg md:text-3xl lg:text-3xl xl:text-3xl font-black font-alternative text-neutral-dark;
   }
   h4 {
-    @apply text-base sm:text-base md:text-xl lg:text-xl xl:text-xl font-black font-alternative text-neutral-light;
+    @apply text-base sm:text-base md:text-xl lg:text-xl xl:text-xl font-black font-alternative text-neutral-dark;
   }
   p {
     @apply text-base sm:text-base md:text-xl font-normal font-sans text-neutral-mediumDark;

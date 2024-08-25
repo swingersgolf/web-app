@@ -4,7 +4,7 @@ import Card from "@components/Card";
 import Page from "@components/Page";
 import BannerLogo from "@assets/branding/BannerLogo.svg";
 import Legal from "@components/Legal";
-import { loginValidationSchema } from '@utils/validationSchema';
+import { loginValidationSchema } from '@utils/validationSchemas';
 import { useNavigate } from 'react-router-dom';
 import { SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -94,7 +94,7 @@ const Login = () => {
                                         <IconComponent
                                             key={index}
                                             size={32}
-                                            className="cursor-pointer hover:text-primary-light transition-colors duration-300"
+                                            className="cursor-pointer text-neutral-dark hover:text-primary-light transition-colors duration-300"
                                             onClick={() => handleSocialSignIn((signIn as any)[provider.signInMethod])}
                                         />
                                     );

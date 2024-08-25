@@ -16,3 +16,9 @@ export const contactValidationSchema = yup.object().shape({
 	name: yup.string().required('Name is required'),
 	message: yup.string().required('Message is required'),
 });
+
+export const accountValidationSchema = yup.object().shape({
+    name: yup.string().required('Name is required'),
+    email: yup.string().email('Invalid email address').required('Email is required'),
+    handicap: yup.number().min(-54, 'Handicap must be at least -54').max(54, 'Handicap must be at most 54').required('Handicap is required'),
+});

@@ -9,7 +9,6 @@ import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import Spinner from "@components/Spinner";
 import axios from "axios";
-import { set } from "react-hook-form";
 
 const editableFields = [
     { key: 'handicap', label: 'Handicap' },
@@ -130,3 +129,4 @@ const Account = () => {
 };
 
 export default Account;
+
