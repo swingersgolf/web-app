@@ -23,7 +23,7 @@ const FormField: FC<FormFieldProps> = ({ label, type, error, register }) => {
           {...register}
         />
       )}
-      {error && <p className="text-alert text-sm flex items-center gap-x-2"><FiAlertTriangle className="inline" /> {error.message}</p>}
+      {error && <p className="text-alert-error text-sm flex items-center gap-x-2"><FiAlertTriangle className="inline" /> {error.message}</p>}
     </div>
   );
 };

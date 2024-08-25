@@ -62,7 +62,6 @@ const Account = () => {
         <Page id="register">
             <Navbar/>
             <div className="trapezoid-background-2 bg-primary" />
-            <div className="mobile-trapezoid-background-2 bg-primary" />
             <Card id="create-account-form" className="w-form-card-mobile md:w-form-card-md lg:w-form-card-lg h-fit gap-y-6 mb-16">
                 <h3>Account</h3>
                 { !account || loading ? 

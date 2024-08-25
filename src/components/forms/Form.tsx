@@ -29,7 +29,7 @@ const Form: FC<FormProps> = ({ formFields, validationSchema, onSubmit, error, bu
 				/>
 			))}
 			{error && (
-				<p className="text-alert text-sm flex items-center gap-x-2">
+				<p className="text-alert-error text-sm flex items-center gap-x-2">
 					<FiAlertTriangle className="inline" /> {error}
 				</p>
 			)}

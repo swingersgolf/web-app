@@ -3,36 +3,16 @@
     position: absolute;
     left: 0;
     width: 100%;
-    height: 800px;
-    clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
-    z-index: -1;
-}
-
-.parallelogram-background-mobile {
-    position: absolute;
-    left: 0;
-    width: 100%;
     height: 700px;
     clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
     z-index: -1;
 }
 
-.hero-trapezoid-background {
-    position: absolute;
-    left: 0;
-    width: 100vw;
-    height: 575px;
-    clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 100%);
-    z-index: -1;
-}
-
-.hero-trapezoid-background-mobile {
-    position: absolute;
-    left: 0;
-    width: 100vw;
-    height: 375px;
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
-    z-index: -1;
+@media (min-width: 768px) { /* md */
+    .parallelogram-background {
+        height: 800px;
+        clip-path: polygon(0 15%, 100% 0, 100% 85%, 0% 100%);
+    }
 }
 
 .trapezoid-background {
@@ -40,23 +20,34 @@
     left: 0;
     top: 200px;
     width: 100%;
-    height: 400px;
+    height: 300px;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     z-index: -1;
+}
+
+@media (min-width: 768px) { /* md */
+    .trapezoid-background {
+        height: 400px;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    }
 }
 
 .trapezoid-background-2 {
     position: absolute;
     left: 0;
     width: 100%;
-    height: 600px;
+    height: 400px;
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 60%);
     z-index: -1;
 }
 
-.mobile-trapezoid-background-2 {
-
+@media (min-width: 768px) { /* md */
+    .trapezoid-background-2 {
+        height: 600px;
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 60%);
+    }
 }
+
 
 .irregular-background {
     position: absolute;
@@ -77,33 +68,31 @@
 }
    
 .hero-gradient {
-    width:100%;
-    height:100%;
-    --gradient-color-1: #07663B; 
-    --gradient-color-2: #4CAF74; 
-    --gradient-color-3: #FFCD05;  
-    --gradient-color-4: #7DBBFA;
+    width: 100%;
+    height: 100%;
+    --gradient-color-1: #07663b; 
+    --gradient-color-2: #348658; 
+    --gradient-color-3: #56a777;  
+    --gradient-color-4: #78ca97;
 
     position: absolute;
     left: 0;
     width: 100vw;
-    height: 575px;
-    clip-path: polygon(0 0, 100% 0, 100% 55%, 0% 100%);
+    height: 350px; /* Default height */
+    clip-path: polygon(0 0, 100% 0, 100% 275px, 0% 100%); /* Default clip path */
     z-index: -1;
 }
 
-.hero-gradient-mobile {
-    width:100%;
-    height:100%;
-    --gradient-color-1: #D1D5D8; 
-    --gradient-color-2: #3498DB; 
-    --gradient-color-3: #E74C3C;  
-    --gradient-color-4: #F1C40F;
+@media (min-width: 768px) { /* md */
+    .hero-gradient {
+        height: 500px; /* Adjust height for md screens */
+        clip-path: polygon(0 0, 100% 0, 100% 325px, 0% 100%); /* Adjust clip path for md screens */
+    }
+}
 
-    position: absolute;
-    left: 0;
-    width: 100vw;
-    height: 375px;
-    clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
-    z-index: -1;
+@media (min-width: 1024px) { /* lg */
+    .hero-gradient {
+        height: 575px; /* Default height for lg screens */
+        clip-path: polygon(0 0, 100% 0, 100% 350px, 0% 100%); /* Default clip path for lg screens */
+    }
 }
