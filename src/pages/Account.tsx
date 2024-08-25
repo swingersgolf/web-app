@@ -3,12 +3,22 @@ import Page from "@components/Page";
 import { useAuth } from "@contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import TextButton from "@components/buttons/TextButton";
-import { FiX } from "react-icons/fi";
+import { FiAlertTriangle, FiX } from "react-icons/fi";
 import Card from "@components/Card";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import Spinner from "@components/Spinner";
 import axios from "axios";
+import { set } from "react-hook-form";
+
+const editableFields = [
+    { key: 'handicap', label: 'Handicap' },
+];
+
+const uneditableFields = [
+    { key: 'name', label: 'Name' },
+    { key: 'email', label: 'Email' },
+];
 
 const Account = () => {
     const { account, signOut, updateAccount, fetchAccount } = useAuth();
@@ -37,6 +47,8 @@ const Account = () => {
         try {
             await updateAccount(editedAccount);        
             await fetchAccount();
+            setIsEditing(false);
+            setEditedAccount({});
         } catch (error: any) {
             if (axios.isAxiosError(error) && error.response) {
                 const errorMessage = error.response.data.message || 'Failed to update account. Please try again.';
@@ -45,13 +57,12 @@ const Account = () => {
                 setError('An unexpected error occurred. Please try again.');
             }
         } finally {
-            setIsEditing(false);
-            setEditedAccount({});
             setLoading(false);
         }
     };
 
     const handleCancel = () => {
+        setError('');
         setEditedAccount({});
         setIsEditing(false);
     };
@@ -69,21 +80,32 @@ const Account = () => {
                     :
                     <>
                         <div id="account-info" className="flex flex-col gap-y-4">
-                            {accountEntries.map(([key, value]: [string, any] | any[], _index: number, _array: any[][]) => (
-                                <div key={key}>
-                                    <p>{key}</p>
-                                    {isEditing ? (
-                                        <input
-                                            type="text"
-                                            value={editedAccount[key] ?? value ?? ""}
-                                            onChange={(e) => handleInputChange(key, e.target.value)}
-                                        />
-                                    ) : (
-                                        <p className="px-4 py-3 rounded-md border border-white">{value ? value : "N/A"}</p>
-                                    )}
-                                </div>
-                            ))}
+                            <div id="uneditable-fields" className="flex-col flex gap-y-2 border-b border-neutral-dark pb-2">
+                                {uneditableFields.map(({ key, label }) => (
+                                    <div key={key}>
+                                        <p>{label}</p>
+                                        <p className="rounded-md border border-white">{account[key] ? account[key] : "N/A"}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div id="editable-fields" className="flex-col flex gap-y-2">
+                                {editableFields.map(({ key, label }) => (
+                                    <div key={key}>
+                                        <p>{label}</p>
+                                        {isEditing ? (
+                                            <input
+                                                type="text"
+                                                value={editedAccount[key] ?? account[key] ?? ""}
+                                                onChange={(e) => handleInputChange(key, e.target.value)}
+                                            />
+                                        ) : (
+                                            <p className="rounded-md border border-white">{account[key] ? account[key] : "N/A"}</p>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
+                        {error && <p className="text-alert-error text-sm flex items-center gap-x-2"><FiAlertTriangle className="inline" /> {error}</p>}                     
                         <div className="flex gap-y-4 flex-col md:flex-row justify-between items-start md:items-center">
                             <div className="flex flex-row items-center gap-x-4">
                                 {isEditing ? (
