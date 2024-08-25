@@ -1,13 +1,11 @@
 import BannerLogo from '@assets/branding/BannerLogo.svg';
-import BannerLogoWhite from '@assets/branding/BannerLogoWhite.svg';
-import BoxLogo from '@assets/branding/BoxLogo.svg';
-import BoxLogoWhite from '@assets/branding/BoxLogoWhite.svg';
-import IconLogo from '@assets/branding/IconLogo.svg';
-import IconLogoWhite from '@assets/branding/IconLogoWhite.svg';
+import BannerLogoLight from '@assets/branding/BannerLogoLight.svg';
+import Icon from '@assets/branding/Icon.svg';
+import IconLight from '@assets/branding/IconLight.svg';
 
 interface LogoButtonProps {
 	color?: 'white' | 'green';
-	type?: 'banner' | 'box' | 'icon';
+	type?: 'banner' | 'icon';
 	onClick?: () => void;
 	title?: string;
 	ariaLabel: string;
@@ -17,17 +15,12 @@ interface LogoButtonProps {
 const logoDetails = {
 	banner: {
 		default: BannerLogo,
-		white: BannerLogoWhite,
+		white: BannerLogoLight,
 		alt: 'Banner Logo',
 	},
-	box: {
-		default: BoxLogo,
-		white: BoxLogoWhite,
-		alt: 'Box Logo',
-	},
 	icon: {
-		default: IconLogo,
-		white: IconLogoWhite,
+		default: Icon,
+		white: IconLight,
 		alt: 'Icon Logo',
 	},
 };

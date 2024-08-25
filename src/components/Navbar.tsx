@@ -27,7 +27,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav id="navbar" className="flex flex-row justify-between items-center h-20 w-full text-light font-semibold text-base z-50">
+        <nav id="navbar" className="flex flex-row justify-between items-center h-20 w-full text-neutral-light font-semibold text-base z-50">
             <div id="pages" className="md:flex flex-row gap-x-12 hidden">
                 <LogoButton color="white" type='banner' onClick={() => navigate('/')} ariaLabel='Home Button'/>
                 <button 

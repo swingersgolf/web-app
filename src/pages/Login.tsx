@@ -68,7 +68,7 @@ const Login = () => {
 
     return (
         <Page id="login">
-            <div className="trapezoid-background bg-dark-green" />
+            <div className="trapezoid-background bg-primary" />
             <div id="login-content" className="flex flex-col justify-start gap-y-8 py-16">
                 <img src={BannerLogo} alt="banner-logo" className="w-40" />
                 <Card id="sign-in-form" className="w-form-card-mobile md:w-form-card-md lg:w-form-card-lg h-fit gap-y-8">
@@ -94,14 +94,14 @@ const Login = () => {
                                         <IconComponent
                                             key={index}
                                             size={32}
-                                            className="cursor-pointer hover:text-light-green transition-colors duration-300"
+                                            className="cursor-pointer hover:text-primary-light transition-colors duration-300"
                                             onClick={() => handleSocialSignIn((signIn as any)[provider.signInMethod])}
                                         />
                                     );
                                 })}
                             </div>
                             <div className="flex justify-center items-center text-center">
-                                New to Swingers?&nbsp;<a href="/register" className="text-light-green">Create an account</a>
+                                New to Swingers?&nbsp;<a href="/register" className="text-primary-light">Create an account</a>
                             </div>
                         </>
                     )}

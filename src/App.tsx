@@ -12,7 +12,7 @@ import Account from "@pages/Account";
 
 const App = () => {
   return (
-      <div className="w-screen min-h-screen flex flex-col items-center font-primary bg-primary">
+      <div className="w-screen min-h-screen flex flex-col items-center font-primary bg-background-primary">
         <AuthProvider>
           <Router>
             <ScrollToTop />

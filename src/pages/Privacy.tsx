@@ -6,7 +6,7 @@ const Privacy = () => {
     return (
         <Page id="privacy">
             <div id="privacy-container">
-                <div className="flex flex-row justify-between items-center h-20 w-full"><LogoButton/></div>
+                <div className="flex flex-row justify-between items-center h-20 w-full"><LogoButton ariaLabel={""}/></div>
                 <div id="privacy-content" className="flex flex-col items-start justify-start gap-y-12 py-12">
                     <div id="privacy-policy">
                         <h1>Privacy Policy</h1>

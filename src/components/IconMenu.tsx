@@ -62,7 +62,7 @@ const IconMorph: React.FC<IconMorphProps> = ({ initialIcon, toggleIcon, isToggle
 
     return (
         <div
-            className="flex justify-center items-center font-medium bg-dark w-12 h-12 rounded-full bg-opacity-30 text-sm border border-opacity-10 border-dark backdrop-blur cursor-pointer"
+            className="flex justify-center items-center font-medium bg-neutral-dark w-12 h-12 rounded-full bg-opacity-30 text-sm border border-opacity-10 border-neutral-dark backdrop-blur cursor-pointer"
             onClick={handleClick}
         >
             <motion.div
@@ -91,7 +91,7 @@ const MenuModal: React.FC<MenuModalProps> = ({ menuOptions, isToggled, setIsTogg
         <AnimatePresence>
             {isToggled && (
                 <motion.div
-                    className="absolute top-full right-0 w-32 mt-2 p-4 gap-y-4 flex flex-col justify-center items-start font-medium bg-dark rounded-xl bg-opacity-30 text-sm border border-opacity-10 border-dark backdrop-blur"
+                    className="absolute top-full right-0 w-32 mt-2 p-4 gap-y-4 flex flex-col justify-center items-start font-medium bg-neutral-dark rounded-xl bg-opacity-30 text-sm border border-opacity-10 border-neutral-dark backdrop-blur"
                     initial={{
                         opacity: 0,
                         scale: 0,

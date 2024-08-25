@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import IconLogo from "@assets/branding/IconLogo.svg";
+import Icon from "@assets/branding/Icon.svg";
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -21,18 +21,18 @@ const Footer = () => {
                     <div className="flex flex-col justify-center items-start gap-y-4">
                         <div className="text-xs 2xl:text-sm text-dark text-opacity-70 font-alternative">RESOURCES</div>
                         <div className="text-base font-medium 2xl:text-lg hover:cursor-pointer"
-                             onClick={() => navigate("/")}>
+                             onClick={() => navigate("/privacy")}>
                             Privacy & terms
                         </div>
                         <div className="text-base font-medium 2xl:text-lg hover:cursor-pointer"
-                             onClick={() => navigate("/postings")}>
+                             onClick={() => navigate("/contact")}>
                             Contact
                         </div>
                     </div>
                 </div>
                 <div className="w-full md:flex hidden h-full flex-col items-start justify-start row-start-1 col-start-1">
                     {/* <LilypadIcon className={"w-20 h-20 2xl:h-24 2xl:w-24"}/> */}
-                    <img src={IconLogo} alt="SwingersGolf Logo" className="w-20 h-20 2xl:h-24 2xl:w-24"/>
+                    <img src={Icon} alt="SwingersGolf Logo" className="w-20 h-20 2xl:h-24 2xl:w-24"/>
                 </div>
                 <div className="col-start-1 row-start-2 w-full h-full flex flex-col justify-end items-start">
                     <div className="font-medium text-base 2xl:text-lg">© 2021 SwingersGolf, Inc.</div>

@@ -51,7 +51,7 @@ const Register = () => {
 
     return (
         <Page id="register">
-            <div className="trapezoid-background bg-dark-green" />
+            <div className="trapezoid-background bg-primary" />
             <div id="register-content" className="flex flex-col justify-start gap-y-6 py-16">
                 <img src={BannerLogo} alt="banner-logo" className="w-40" />
                 <Card id="create-account-form" className="w-form-card-mobile md:w-form-card-md lg:w-form-card-lg h-fit gap-y-6">
@@ -72,10 +72,10 @@ const Register = () => {
                             />
                             <p>
                                 By clicking create account you are agreeing to follow our
-                                <a className="text-dark-green" href="/privacy"> privacy & terms</a>.
+                                <a className="text-primary-light" href="/privacy"> privacy & terms</a>.
                             </p>
                             <div className="flex justify-center items-center text-center">
-                                Already have an account?&nbsp;<a href="/login" className="text-light-green">Sign in</a>
+                                Already have an account?&nbsp;<a href="/login" className="text-primary-light">Sign in</a>
                             </div>
                         </>
                     )}

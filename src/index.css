@@ -7,19 +7,19 @@
 
 @layer base {
   h1 {
-    @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl font-black font-alternative text-header;
+    @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl font-black font-alternative text-neutral-dark;
   }
   h2 {
-    @apply text-2xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl font-black font-alternative text-header;
+    @apply text-2xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-5xl font-black font-alternative text-neutral-dark;
   }
   h3 {
-    @apply text-lg sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl font-black font-alternative text-header;
+    @apply text-lg sm:text-3xl md:text-3xl lg:text-3xl xl:text-3xl font-black font-alternative text-neutral-dark;
   }
   h4 {
-    @apply text-base sm:text-xl md:text-xl lg:text-xl xl:text-xl font-black font-alternative text-light;
+    @apply text-base sm:text-xl md:text-xl lg:text-xl xl:text-xl font-black font-alternative text-neutral-light;
   }
   p {
-    @apply text-base sm:text-lg md:text-xl font-normal font-sans text-text;
+    @apply text-base sm:text-lg md:text-xl font-normal font-sans text-neutral-dark;
   }
   input {
     @apply border px-4 py-3 rounded-md w-full;

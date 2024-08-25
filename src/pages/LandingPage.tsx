@@ -1,10 +1,10 @@
 import Navbar from "@components/Navbar";
-import HomePage from "@assets/mockups/HomePage.svg";
+import TwoDeviceMockup from "@assets/mockups/TwoDeviceMockup.svg";
 import Caption from "@components/Caption";
 import AnimatedWordSwap from "@animations/AnimatedWordSwap/AnimatedWordSwap";
 import DownloadButtons from "@components/buttons/DownloadButtons";
-import UndrawTeam from "@assets/UndrawTeam.svg";
-import UndrawGolfer from "@assets/UndrawGolfer.svg";
+import TeamIllustration from "@assets/illustrations/TeamIllustration.svg";
+import GolferIllustration from "@assets/illustrations/GolferIllustration.svg";
 import GolfNowLogo from '@assets/logos/GolfNowLogo.svg';
 import Footer from "@components/Footer";
 import "@styles/DivStyles.css";
@@ -14,7 +14,7 @@ import useGradient from "@hooks/useGradient";
 const Hero = () => {
     return (
         <div id="hero" className="flex flex-col justify-start w-full relative">
-            <img src={HomePage} alt="home-page-mockup" className="w-[1000px] h-auto absolute left-2/3 hidden md:flex"/>
+            <img src={TwoDeviceMockup} alt="home-page-mockup" className="w-[1000px] h-auto absolute left-2/3 hidden md:flex"/>
             <div id="hero-content" className="flex flex-col md:w-[60%] gap-y-10">
                 <Caption text="Swingers endorsed by John Doe" route="/idk"/>
                 <h1>Golf matchmaker to fill your 
@@ -65,7 +65,7 @@ const ExpandYourNetwork = () => {
                 </div>
             </div>
             <div id="expand-your-network-image-container" className="hidden md:flex w-1/3">
-                <img id="expand-your-network-image" src={UndrawTeam} alt="team" className="w-full h-auto"/>
+                <img id="expand-your-network-image" src={TeamIllustration} alt="Team Illustration" className="w-full h-auto"/>
             </div>
         </div>
     );
@@ -74,24 +74,24 @@ const ExpandYourNetwork = () => {
 const FindYourPartner = () => {
     return (
         <div id="find-your-partner" className="flex flex-col justify-center items-center text-center py-16 md:py-24 gap-y-8 md:gap-y-16">
-            <div className="hidden md:flex parallelogram-background bg-dark-green"></div>
-            <div className="flex md:hidden parallelogram-background-mobile bg-dark-green"></div>
+            <div className="hidden md:flex parallelogram-background bg-primary"></div>
+            <div className="flex md:hidden parallelogram-background-mobile bg-primary"></div>
             <div className="flex flex-col gap-y-0 md:gap-y-2">
-                <h2 className="text-light-header">Find your golf partner and start playing</h2>
-                <p className="text-light-text">Join our platform and discover a community of golfers ready to play. Sign up, find a golf partner, and start enjoying the game today.</p>
+                <h2 className="text-neutral-light">Find your golf partner and start playing</h2>
+                <p className="text-neutral-medium">Join our platform and discover a community of golfers ready to play. Sign up, find a golf partner, and start enjoying the game today.</p>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-center gap-y-4 md:gap-x-8 w-full">
                 <div className="flex flex-col items-center justify-center gap-y-0 md:gap-y-2 md:w-1/3">
                     <h4>Sign up and create your profile</h4>
-                    <p className="text-light-text">Create your profile and let others know your golfing preferences and availability.</p>
+                    <p className="text-neutral-medium">Create your profile and let others know your golfing preferences and availability.</p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-y-0 md:gap-y-2 md:w-1/3">
                     <h4>Find golf partners near you</h4>
-                    <p className="text-light-text">Browse through a list of golfers in your area and connect with potential partners.</p>
+                    <p className="text-neutral-medium">Browse through a list of golfers in your area and connect with potential partners.</p>
                 </div>
                 <div className="flex flex-col items-center justify-center gap-y-0 md:gap-y-2 md:w-1/3">
                     <h4>Schedule a game and enjoy golfing</h4>
-                    <p className="text-light-text">Coordinate with your golf partner, choose a golf course, and have a great time playing golf together.</p>
+                    <p className="text-neutral-medium">Coordinate with your golf partner, choose a golf course, and have a great time playing golf together.</p>
                 </div>
             </div>
             <div>
@@ -121,7 +121,7 @@ const DiscoverThePower = () => {
                 </div>
             </div>
             <div id="discover-the-power-image-container" className="hidden md:flex w-1/3">
-                <img id="discover-the-power-image" src={UndrawGolfer} alt="golfer" className="w-full h-auto"/>
+                <img id="discover-the-power-image" src={GolferIllustration} alt="Golfer Illustration" className="w-full h-auto scale-x-[-1]"/>
             </div>
         </div>
     );

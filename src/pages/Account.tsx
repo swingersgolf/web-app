@@ -61,8 +61,8 @@ const Account = () => {
     return (
         <Page id="register">
             <Navbar/>
-            <div className="trapezoid-background-2 bg-dark-green" />
-            <div className="mobile-trapezoid-background-2 bg-dark-green" />
+            <div className="trapezoid-background-2 bg-primary" />
+            <div className="mobile-trapezoid-background-2 bg-primary" />
             <Card id="create-account-form" className="w-form-card-mobile md:w-form-card-md lg:w-form-card-lg h-fit gap-y-6 mb-16">
                 <h3>Account</h3>
                 { !account || loading ? 
@@ -91,7 +91,7 @@ const Account = () => {
                                 {isEditing ? (
                                     <>
                                         <TextButton onClick={handleSave} text="Save" ariaLabel="Save account changes button"/>
-                                        <TextButton onClick={handleCancel} text="Cancel" ariaLabel="Cancel editing account button" backgroundColor="bg-caption"/>
+                                        <TextButton onClick={handleCancel} text="Cancel" ariaLabel="Cancel editing account button" backgroundColor="bg-neutral-medium"/>
                                     </>
                                 ) : (
                                     <>
@@ -99,7 +99,7 @@ const Account = () => {
                                     </>
                                 )}
                             </div>
-                            <TextButton onClick={handleSignOut} text="Sign out" ariaLabel="Sign out button" backgroundColor="bg-caption"/>
+                            <TextButton onClick={handleSignOut} text="Sign out" ariaLabel="Sign out button" backgroundColor="bg-neutral-medium"/>
                         </div>
                     </>
                 }
