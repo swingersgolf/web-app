@@ -11,12 +11,12 @@ import Spinner from "@components/Spinner";
 import axios from "axios";
 
 const editableFields = [
-    { label: 'Handicap', name: 'handicap' },
+    { key: 'handicap', label: 'Handicap' },
 ];
 
 const uneditableFields = [
-    { label: 'Name', type: 'text', name: 'name' },
-    { label: 'Email', type: 'text', name: 'email' },
+    { key: 'name', label: 'Name' },
+    { key: 'email', label: 'Email' },
 ];
 
 const Account = () => {
@@ -61,59 +61,60 @@ const Account = () => {
     };
 
     const handleCancel = () => {
+        setError('');
         setEditedAccount({});
         setIsEditing(false);
     };
-    
-    const UneditableField = ({ label, value }: { label: string; value: string }) => {
-        return (
-            <div id={`${label.toLowerCase()}-field`}>
-                <h4>{label}</h4>
-                <p className="rounded-md border border-white">{account[value] ? account[value] : "N/A"}</p>
-            </div>
-        );
-    };
-    
-    const EditableField = ({ label, value, type }: { label: string; value: string; type: string }) => {
-        return (
-            <div id={`${label.toLowerCase()}-field`}>
-                <h4>{label}</h4>
-                { isEditing ? (
-                    <input
-                        type={type}
-                        value={editedAccount[value] ?? account[value] ?? ""}
-                        onChange={(e) => handleInputChange(value, e.target.value)}
-                    />
-                ) : (
-                    <p className="rounded-md border border-white">{account[value] ? account[value] : "N/A"}</p>
-                )}
-            </div>
-        );
-    };
-    
+
+    const accountEntries = account ? Object.keys(account).map(key => [key, account[key]]) : [];
+
     return (
         <Page id="register">
             <Navbar/>
             <div className="trapezoid-background-2 bg-primary" />
             <Card id="create-account-form" className="w-form-card-mobile md:w-form-card-md lg:w-form-card-lg h-fit gap-y-6 mb-16">
                 <h3>Account</h3>
-                { !account || loading ? <div className="w-full h-full flex justify-center items-center"><Spinner /></div>:
+                { !account || loading ? 
+                    <div className="w-full h-full flex justify-center items-center"><Spinner /></div>
+                    :
                     <>
                         <div id="account-info" className="flex flex-col gap-y-4">
-                            <div id="uneditable-fields" className="w-full border-b border-neutral-dark flex flex-col gap-y-4 pb-4">
-                                { uneditableFields.map((field) => ( <UneditableField key={field.name} label={field.label} value={field.name}/> ))}
+                            <div id="uneditable-fields" className="flex-col flex gap-y-2 border-b border-neutral-dark pb-2">
+                                {uneditableFields.map(({ key, label }) => (
+                                    <div key={key}>
+                                        <p>{label}</p>
+                                        <p className="rounded-md border border-white">{account[key] ? account[key] : "N/A"}</p>
+                                    </div>
+                                ))}
                             </div>
-                            <div id="editable-fields">
-                                { editableFields.map((field) => ( <EditableField key={field.name} label={field.label} value={field.name} type={field.type}/> ))}
+                            <div id="editable-fields" className="flex-col flex gap-y-2">
+                                {editableFields.map(({ key, label }) => (
+                                    <div key={key}>
+                                        <p>{label}</p>
+                                        {isEditing ? (
+                                            <input
+                                                type="text"
+                                                value={editedAccount[key] ?? account[key] ?? ""}
+                                                onChange={(e) => handleInputChange(key, e.target.value)}
+                                            />
+                                        ) : (
+                                            <p className="rounded-md border border-white">{account[key] ? account[key] : "N/A"}</p>
+                                        )}
+                                    </div>
+                                ))}
                             </div>
                         </div>
-                        {error &&  <p className="text-alert-error text-sm flex items-center gap-x-2"> <FiAlertTriangle className="inline" />{error}</p> }
+                        {error && <p className="text-alert-error text-sm flex items-center gap-x-2"><FiAlertTriangle className="inline" /> {error}</p>}                     
                         <div className="flex gap-y-4 flex-col md:flex-row justify-between items-start md:items-center">
                             <div className="flex flex-row items-center gap-x-4">
-                                {!isEditing ? ( <TextButton onClick={() => setIsEditing(true)} text="Edit Account" ariaLabel="Edit account button"/> ):(
+                                {isEditing ? (
                                     <>
                                         <TextButton onClick={handleSave} text="Save" ariaLabel="Save account changes button"/>
                                         <TextButton onClick={handleCancel} text="Cancel" ariaLabel="Cancel editing account button" backgroundColor="bg-neutral-mediumDark"/>
+                                    </>
+                                ) : (
+                                    <>
+                                        <TextButton onClick={() => setIsEditing(true)} text="Edit Account" ariaLabel="Edit account button"/>
                                     </>
                                 )}
                             </div>
@@ -128,3 +129,4 @@ const Account = () => {
 };
 
 export default Account;
+

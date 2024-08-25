@@ -102,7 +102,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         }        
     };
 
-    const updateAccount = async (updatedAccount: Record<string, any>) => {    
+    const updateAccount = async (updatedAccount: Record<string, any>) => {        
         try {
             if (token) {
                 await axios.patch(
