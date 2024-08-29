@@ -101,7 +101,7 @@ const Login = () => {
                                 })}
                             </div>
                             <div className="flex justify-center items-center text-center">
-                                New to Swingers?&nbsp;<a href="/register" className="text-primary-light">Create an account</a>
+                                New to Swingers?&nbsp;<a href="/register" className="text-primary transition-all duration-300 hover:text-primary-light">Create an account</a>
                             </div>
                         </>
                     )}

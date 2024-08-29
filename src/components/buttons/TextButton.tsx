@@ -12,11 +12,11 @@ interface TextButtonProps {
 
 const TextButton = ({ text, onClick, type = "button", id, ariaLabel, className, backgroundColor }: TextButtonProps ) => {
     if (!backgroundColor) {
-        backgroundColor = "bg-primary-light";
+        backgroundColor = "bg-primary";
     }
 
     return (
-        <button id={id} type={type} onClick={onClick} aria-label={ariaLabel} className={`${className} ${backgroundColor} text-center px-4 py-3  text-neutral-light text-lg font-alternative font-semibold rounded-md`}>{text}</button>
+        <button id={id} type={type} onClick={onClick} aria-label={ariaLabel} className={`${className} ${backgroundColor} text-center px-4 py-3  text-neutral-light text-lg font-alternative font-semibold rounded-md transition-all duration-300 hover:${backgroundColor}-dark`}>{text}</button>
     );
 }
 

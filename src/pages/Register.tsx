@@ -72,10 +72,10 @@ const Register = () => {
                             />
                             <p>
                                 By clicking create account you are agreeing to follow our
-                                <a className="text-primary-light" href="/privacy"> privacy & terms</a>.
+                                <a className="text-primary transition-all duration-300 hover:text-primary-light" href="/privacy"> privacy & terms</a>.
                             </p>
                             <div className="flex justify-center items-center text-center">
-                                Already have an account?&nbsp;<a href="/login" className="text-primary-light">Sign in</a>
+                                Already have an account?&nbsp;<a href="/login" className="text-primary transition-all duration-300 hover:text-primary-light">Sign in</a>
                             </div>
                         </>
                     )}
