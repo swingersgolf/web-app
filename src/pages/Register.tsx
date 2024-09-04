@@ -15,12 +15,14 @@ import Spinner from '@components/Spinner';
 type FormValues = {
     email: string;
     name: string;
+    birthdate: string;
     password: string;
 };
 
 const formFields = [
     { label: 'Full name', type: 'text', name: 'name' },
     { label: 'Email', type: 'email', name: 'email' },
+    { label: 'Birthdate', type: 'date', name: 'birthdate' },
     { label: 'Password', type: 'password', name: 'password' },
 ];
 
