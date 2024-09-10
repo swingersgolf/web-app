@@ -1,18 +1,22 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import axios from 'axios';
-import { AccountType } from '@types/AuthTypes/AuthTypes';
+import { UserType, ProfileType } from '@types/AuthTypes';
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 interface AuthContextType {
     token: string | null;
-    account: AccountType | null;
+    user: UserType | null;
+    profile: ProfileType | null;
     signIn: (email: string, password: string) => Promise<void>;
     signInWithGoogle: () => Promise<void>;
     signOut: () => void;
     createAccount: (name: string, email: string, password: string) => Promise<void>;
-    fetchAccount: () => Promise<void>;
-    updateAccount: (updatedAccount: AccountType) => Promise<void>;
+    fetchUser: () => Promise<void>;
+    fetchProfile : () => Promise<void>;
+    updateProfile : (updatedProfile: ProfileType) => Promise<void>;
+    verifyEmail: (email: string, code: string) => Promise<void>;
+    resendVerificationCode: (email: string) => Promise<void>;
 }
 
 export const useAuth = (): AuthContextType => {
@@ -31,16 +35,20 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     const [token, setToken] = useState<string | null>(() => {
         return localStorage.getItem('authToken');
     });
-    const [account, setAccount] = useState<AccountType | null>(null);
+    const [user, setUser] = useState<UserType | null>(null);
+    const [profile, setProfile] = useState<ProfileType | null>(null);
+    const API_URL = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
         const initializeAuth = async () => {
             if (token) {
                 localStorage.setItem('authToken', token);
-                await fetchAccount();
+                await fetchUser();
+                await fetchProfile();
             } else {
                 localStorage.removeItem('authToken');
-                setAccount(null);
+                setUser(null);
+                setProfile(null);
             }
         };
 
@@ -49,7 +57,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     const signIn = async (email: string, password: string) => {
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/login', {
+            const response = await axios.post(`${API_URL}/v1/login`, {
                 email,
                 password
             });
@@ -62,7 +70,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     const signInWithGoogle = async () => {
         try {
-            const response = await axios.post('http://127.0.0.1:8000/google/redirect');
+            const response = await axios.post("");
         } catch (error) {
             console.error('Error logging in:', error);
             return Promise.reject(error);
@@ -75,7 +83,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
     const createAccount = async (name: string, email: string, password: string) => {
         try {
-            await axios.post('http://127.0.0.1:8000/api/register', {
+            await axios.post(`${API_URL}/v1/register`, {
                 name,
                 email,
                 password
@@ -86,15 +94,15 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         }
     };
 
-    const fetchAccount = async () => {        
+    const fetchUser = async () => {        
         try {
             if (token) {
-                const response = await axios.get('http://127.0.0.1:8000/api/v1/user', {
+                const response = await axios.get(`${API_URL}/v1/user`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 });
-                setAccount(response.data.data);
+                setUser(response.data.data);
             }
         } catch (error) {
             console.error('Error fetching user:', error);
@@ -102,12 +110,28 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
         }        
     };
 
-    const updateAccount = async (updatedAccount: Record<string, any>) => {        
+    const fetchProfile = async () => {        
+        try {
+            if (token) {
+                const response = await axios.get(`${API_URL}/v1/user-profile`, {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                });
+                setProfile(response.data.data);
+            }
+        } catch (error) {
+            console.error('Error fetching profile:', error);
+            return Promise.reject(error);
+        }        
+    };
+
+    const updateProfile = async (updatedProfile: ProfileType) => {        
         try {
             if (token) {
                 await axios.patch(
-                    'http://127.0.0.1:8000/api/v1/user',
-                    updatedAccount,
+                    `{API_URL}/v1/user-profile`,
+                    updatedProfile,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -117,13 +141,36 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
                 );
             }
         } catch (error) {
-            console.error('Error updating user:', error);
+            console.error('Error updating profile:', error);
+            return Promise.reject(error);
+        }
+    };
+
+    const verifyEmail = async (name: string, code: string) => {
+        try {
+            await axios.post(`${API_URL}/v1/verify`, {
+                email,
+                code
+            });
+        } catch (error) {
+            console.error('Error creating account:', error);
+            return Promise.reject(error);
+        }
+    };
+
+    const resendVerificationCode = async (email: string) => {
+        try {
+            await axios.post(`${API_URL}/v1/resend`, {
+                email,
+            });
+        } catch (error) {
+            console.error('Error creating account:', error);
             return Promise.reject(error);
         }
     };
 
     return (
-        <AuthContext.Provider value={{ token, account, signIn, signInWithGoogle, signOut, createAccount, fetchAccount, updateAccount }}>
+        <AuthContext.Provider value={{ token, user, profile, signIn, signInWithGoogle, signOut, createAccount, fetchUser, fetchProfile, updateProfile, verifyEmail, resendVerificationCode }}>
             {children}
         </AuthContext.Provider>
     );
