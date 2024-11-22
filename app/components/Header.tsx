@@ -33,12 +33,12 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
-            <nav id="header-nav" className="flex md:hidden flex-row justify-between items-center text-lg">
-                <Link to="/" id='banner-logo-link' className='w-36'>
+            <nav id="header-nav" className="fixed top-0 w-full z-50 bg-background-primary flex md:hidden flex-row justify-between items-center text-lg">
+                <Link to="/" id='banner-logo-link' className='w-40'>
                     <BannerLogo />
                 </Link>
-                <button className="md:hidden flex">
-                    <MdMenu/>
+                <button className="md:hidden">
+                    <MdMenu className="h-6 w-auto"/>
                 </button>
             </nav>
         </header>
