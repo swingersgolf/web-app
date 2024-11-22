@@ -5,29 +5,63 @@ import Ticker from "~/components/Ticker";
 import HeroAnimation from "~/components/assets/HeroAnimation";
 import GolfIllustration from "~/components/assets/GolfIllustration";
 import DownloadButtons from "~/components/DownloadButtons";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
 import Icon from "~/components/assets/Icon";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Swingers | Golf Matching Platform" },
+    { title: "Swingers | Golf Matchmaking Platform" },
     { name: "description", content: "Welcome to Swingers!" },
   ];
+};
+
+const GroupSizeAnimation = () => {
+  const groupSizes = ["two", "three", "four"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % groupSizes.length);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex items-center justify-center mt-8">
+      <h1 className="title">
+        The golf matchmaking platform to fill your{" "}
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={groupSizes[currentIndex]}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5 }}
+          >
+            {groupSizes[currentIndex]}
+          </motion.span>
+        </AnimatePresence>
+        some
+      </h1>
+    </div>
+  );
 };
 
 const Hero = () => {
   return (
     <section>
-      <div className="flex flex-col items-center justify-center text-center px-4 md:px-40 gap-y-4 pt-16"> 
-        <h1 className="title">The golf matchmaking platform to fill your foursome</h1>
-        <h2 className="subtitle">Unparalled enjoyment on the outings that matter most</h2>
+      <div className="flex flex-col items-center justify-center text-center md:px-40 gap-y-4 pt-16">
+        <GroupSizeAnimation />
+        <h2 className="subtitle">Unparalleled enjoyment on the outings that matter most</h2>
       </div>
-      <DownloadButtons className="flex flex-row items-center justify-center gap-x-4 py-12"/>
+      <DownloadButtons className="flex flex-row items-center justify-center gap-x-4 py-12" />
       <HeroAnimation />
     </section>
-  )
-}
+  );
+};
+
 
 const Sponsor = () => {
   const Sponsors = [
