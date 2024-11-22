@@ -14,8 +14,8 @@ const Header = () => {
 
     return (
         <header>
-            <nav id="header-nav" className="flex flex-row justify-between items-center text-base md:text-lg">
-                <Link to="/" id='banner-logo-link' className='w-52'>
+            <nav id="header-nav" className="w-full md:relative fixed top-0 z-50 bg-background-primary flex flex-row justify-between items-center text-sm md:text-lg">
+                <Link to="/" id='banner-logo-link' className='w-40 md:w-52'>
                     <BannerLogo />
                 </Link>
                 <div className="flex flex-row items-center gap-x-4 lg:gap-x-8">
