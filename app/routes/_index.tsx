@@ -162,7 +162,7 @@ const KeyFeatures = () => {
                 id="key-feature-image"
                 className="flex md:hidden w-full h-fit items-center justify-center rounded-2xl bg-background-secondary p-8"
               >
-                <img src={feature.mockup} alt={feature.title} className="h-80 w-fit"/>
+                <img src={feature.mockup} alt={feature.title} className="w-full h-auto"/>
               </div>
               {/* Text */}
               <div
