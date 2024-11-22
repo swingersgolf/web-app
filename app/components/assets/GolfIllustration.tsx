@@ -4,7 +4,6 @@ const GolfIllustration = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     data-name="Layer 1"
-    height={300}
     viewBox="0 0 926.0745 800"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     {...props}

@@ -1,10 +1,10 @@
 import { SVGProps } from "react";
 
-const DownloadGooglePlay = (props: SVGProps<SVGSVGElement>) => (
+const DownloadGooglePlay = ({ height, ...props }: SVGProps<SVGSVGElement>) => (
   <svg
-    height={50}
     viewBox="0 0 136 41"
     fill="none"
+    height={height ? height : "50"}
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >

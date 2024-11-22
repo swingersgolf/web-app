@@ -9,8 +9,8 @@ interface DownloadButtonsProps {
 const DownloadButtons = ({className}: DownloadButtonsProps) => {
     return (
         <div className={className}>
-            <Link to="appstore"><DownloadAppStore /></Link>
-            <Link to="googleplay"><DownloadGooglePlay /></Link>
+            <Link to="appstore"><DownloadAppStore className="h-10 md:h-16"/></Link>
+            <Link to="googleplay"><DownloadGooglePlay className="h-10 md:h-16"/></Link>
         </div>
     )
 }

@@ -5,8 +5,9 @@ import Ticker from "~/components/Ticker";
 import HeroAnimation from "~/components/assets/HeroAnimation";
 import GolfIllustration from "~/components/assets/GolfIllustration";
 import DownloadButtons from "~/components/DownloadButtons";
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState, useEffect, useMemo } from "react";
+import Icon from "~/components/assets/Icon";
 
 export const meta: MetaFunction = () => {
   return [
@@ -18,7 +19,7 @@ export const meta: MetaFunction = () => {
 const Hero = () => {
   return (
     <section>
-      <div className="flex flex-col items-center justify-center text-center px-4 md:px-40 gap-y-4 pt-16"> 
+      <div className="flex flex-col items-center justify-center text-center px-4 md:px-40 gap-y-4 pt-4 md:pt-16"> 
         <h1 className="title">The golf matchmaking platform to fill your foursome</h1>
         <h2 className="subtitle">Unparalled enjoyment on the outings that matter most</h2>
       </div>
@@ -73,7 +74,7 @@ const Sponsor = () => {
   ];  
   
   return (
-    <section>
+    <section className="py-0">
       <Ticker>
         {Sponsors.map((sponsor) => (
           <li key={sponsor.name}>
@@ -91,12 +92,18 @@ const Sponsor = () => {
 }
 
 const KeyFeatures = () => {
-  const KeyFeatures = [
+  const KeyFeatures = useMemo(() => [
     {
       title: "Set your preferences",
       description:
         "Personalize your golfing experience by setting your preferences for things like skill level, availability, and course types. The app matches you with like-minded players based on your preferences. This helps ensure you always find the best partners to enjoy a round with, tailored to your style.",
       mockup: "/images/mockups/set-preferences.png",
+    },
+    {
+      title: "Create perfect rounds",
+      description:
+        "Easily create and schedule rounds with your preferred partners and courses. The app helps you coordinate and plan your golfing outings, so you can focus on enjoying the game. You can create rounds for any occasion, whether it’s a casual game with friends or a competitive tournament.",
+      mockup: "/images/mockups/create-round.png",
     },
     {
       title: "Find preferred rounds",
@@ -110,53 +117,85 @@ const KeyFeatures = () => {
         "Keep track of your scores and performance over time to measure your progress and challenge yourself. The app offers tools to help you record and review your rounds, so you can focus on improving. This feature encourages a deeper connection with the sport, ensuring you enjoy more golf and reach new milestones.",
       mockup: "/images/mockups/enjoy-golf.png",
     },
-  ];
+  ], []);
+  
+  const [activeFeature, setActiveFeature] = useState(0);
 
-  // Track which feature is currently in view
-  const [visibleIndex, setVisibleIndex] = useState<number>(-1);
+  useEffect(() => {
+    const observerOptions = { threshold: 0.5 };
+    const observers: IntersectionObserver[] = [];
 
+    KeyFeatures.forEach((_, index) => {
+      const element = document.getElementById(`key-feature-${index}`);
+      if (element) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setActiveFeature(index);
+            }
+          },
+          observerOptions
+        );
+        observer.observe(element);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, [KeyFeatures]);
+  
   return (
     <section className="relative">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
-        {/* Left: Key Features Content */}
-        <div>
+        {/* Left: Key Features */}
+        <div className="flex flex-col gap-y-16">
           {KeyFeatures.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
               id={`key-feature-${index}`}
-              className="min-h-screen flex flex-col justify-center gap-y-4"
-              viewport={{
-                once: false,
-                amount: 0.6,
-              }}
-              initial={{ opacity: 0 }}
-              whileInView={{
-                opacity: 1,
-                transition: { duration: 0.5 },
-              }}
-              onViewportEnter={() => setVisibleIndex(index)}
-              onViewportLeave={() => setVisibleIndex(-1)}
+              className="flex flex-col justify-center gap-y-8 md:gap-y-4"
             >
-              <h3 className="text-4xl font-semibold">{feature.title}</h3>
-              <p className="text-lg">{feature.description}</p>
-            </motion.div>
+              {/* Mobile: Mockups */}
+              <div
+                id="key-feature-image"
+                className="flex md:hidden w-full h-fit items-center justify-center rounded-2xl bg-background-secondary p-8"
+              >
+                <img src={feature.mockup} alt={feature.title} className="h-80 w-fit"/>
+              </div>
+              {/* Text */}
+              <div
+                id="key-feature-text"
+                className="flex flex-col justify-center gap-y-2 md:h-screen"
+              >
+                <div className="flex flex-row items-center gap-x-2">
+                  <Icon className="h-7 md:h-10 w-auto" />
+                  <h3 className="text-2xl md:text-4xl font-semibold">
+                    {feature.title}
+                  </h3>
+                </div>
+                <p className="text-base md:text-lg">{feature.description}</p>
+              </div>
+            </div>
           ))}
         </div>
 
         {/* Right: Mockups */}
-        <div className="sticky top-0 h-screen flex items-center justify-center w-full bg-background-secondary rounded-2xl overflow-hidden">
+        <div className="hidden sticky top-0 h-screen md:flex items-center justify-center w-full bg-background-secondary rounded-2xl overflow-hidden">
           {KeyFeatures.map((feature, index) => (
             <motion.div
               key={index}
-              className={`absolute w-full h-full flex items-center justify-center ${
-                visibleIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-              }`}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{
-                opacity: visibleIndex === index ? 1 : 0,
-                scale: visibleIndex === index ? 1 : 0.9,
+              initial={{ opacity: 0 }}
+              animate={{ opacity: activeFeature === index ? 1 : 0 }}
+              transition={{ duration: 1 }}
+              exit={{ 
+                opacity: 0.5,
+                transition: { duration: 1 }
               }}
-              transition={{ duration: 0.5 }}
+              className={`absolute w-full h-full flex items-center justify-center p-16 ${
+                activeFeature === index ? "block" : "hidden"
+              }`}
             >
               <img
                 src={feature.mockup}
@@ -169,17 +208,17 @@ const KeyFeatures = () => {
       </div>
     </section>
   );
-};
+}
 
 const CallToAction = () => {
   return (
     <section>
-      <div className="rounded-2xl w-full flex flex-row items-center cta-gradient-background p-16">
+      <div className="rounded-2xl w-full flex flex-col md:flex-row items-center justify-center cta-gradient-background p-8 md:p-16">
         <div>
-          <h3 className="text-3xl font-accent font-semibold">Join other golfers who are having more enjoyable golfing experiences</h3>
-          <DownloadButtons className="flex flex-row gap-x-4 py-12"/>
+          <h3 className="text-xl md:text-3xl font-accent font-bold">Join others having more enjoyable rounds</h3>
+          <DownloadButtons className="flex flex-row gap-x-4 py-8 md:py-12"/>
         </div>
-        <div className="flex-grow flex justify-center">
+        <div className="flex-grow flex justify-center h-52 w-52">
           <GolfIllustration />
         </div>
       </div>
@@ -191,7 +230,7 @@ export default function Index() {
   return (
     <>
     <Header/>
-    <main className="min-h-screen">
+    <main>
       <Hero />
       <Sponsor />
       <KeyFeatures />
