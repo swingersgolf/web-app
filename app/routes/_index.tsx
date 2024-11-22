@@ -8,6 +8,10 @@ import DownloadButtons from "~/components/DownloadButtons";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
 import Icon from "~/components/assets/Icon";
+import IconHeadSpin from "~/components/assets/animations/IconHeadSpin";
+import RoundsScreen from "~/components/assets/screens/RoundsScreen";
+import CreateRoundScreen from "~/components/assets/screens/CreateRoundScreen";
+import SetPreferencesScreen from "~/components/assets/screens/SetPreferencesScreen";
 
 export const meta: MetaFunction = () => {
   return [
@@ -26,7 +30,7 @@ const GroupSizeAnimation = () => {
     }, 3000); // Change every 3 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [groupSizes.length]);
 
   return (
     <div className="flex items-center justify-center mt-8">
@@ -131,25 +135,25 @@ const KeyFeatures = () => {
       title: "Set your preferences",
       description:
         "Personalize your golfing experience by setting your preferences for things like skill level, availability, and course types. The app matches you with like-minded players based on your preferences. This helps ensure you always find the best partners to enjoy a round with, tailored to your style.",
-      mockup: "/images/mockups/set-preferences.png",
+      mockup: <SetPreferencesScreen className="max-h-full max-w-full" />
     },
     {
       title: "Create perfect rounds",
       description:
         "Easily create and schedule rounds with your preferred partners and courses. The app helps you coordinate and plan your golfing outings, so you can focus on enjoying the game. You can create rounds for any occasion, whether it’s a casual game with friends or a competitive tournament.",
-      mockup: "/images/mockups/create-round.png",
+      mockup: <CreateRoundScreen className="max-h-full max-w-full" />
     },
     {
       title: "Find preferred rounds",
       description:
         "Discover golfing rounds that match your skill level and preferred time slots. You can filter and browse through available tee times, ensuring a seamless and convenient experience. Whether you’re looking for a quick round or a more competitive game, you’ll always find something that suits you.",
-      mockup: "/images/mockups/view-rounds.png",
+      mockup: <RoundsScreen className="max-h-full max-w-full" />
     },
     {
       title: "Enjoy more golf",
       description:
         "Keep track of your scores and performance over time to measure your progress and challenge yourself. The app offers tools to help you record and review your rounds, so you can focus on improving. This feature encourages a deeper connection with the sport, ensuring you enjoy more golf and reach new milestones.",
-      mockup: "/images/mockups/enjoy-golf.png",
+      mockup: <IconHeadSpin className="max-h-full max-w-full" />
     },
   ], []);
   
@@ -196,7 +200,7 @@ const KeyFeatures = () => {
                 id="key-feature-image"
                 className="flex md:hidden w-full h-fit items-center justify-center rounded-2xl bg-background-secondary p-8"
               >
-                <img src={feature.mockup} alt={feature.title} className="w-full h-auto"/>
+                {feature.mockup}
               </div>
               {/* Text */}
               <div
@@ -231,11 +235,7 @@ const KeyFeatures = () => {
                 activeFeature === index ? "block" : "hidden"
               }`}
             >
-              <img
-                src={feature.mockup}
-                alt={feature.title}
-                className="max-w-full max-h-full rounded-lg shadow-lg"
-              />
+              {feature.mockup}
             </motion.div>
           ))}
         </div>
