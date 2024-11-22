@@ -19,7 +19,7 @@ export const meta: MetaFunction = () => {
 const Hero = () => {
   return (
     <section>
-      <div className="flex flex-col items-center justify-center text-center px-4 md:px-40 gap-y-4 pt-4 md:pt-16"> 
+      <div className="flex flex-col items-center justify-center text-center px-4 md:px-40 gap-y-4 pt-8 md:pt-16"> 
         <h1 className="title">The golf matchmaking platform to fill your foursome</h1>
         <h2 className="subtitle">Unparalled enjoyment on the outings that matter most</h2>
       </div>
