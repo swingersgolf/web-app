@@ -1,0 +1,5 @@
+.cta-gradient-background {
+    background-color: #F9F9F9;
+    background-image: radial-gradient(circle at 1% 2%, #7DBBFA 7%, transparent 84%), radial-gradient(circle at 95% 96%, #FFCD05 7%, transparent 84%), radial-gradient(circle at 2% 98%, #4CAF74 7%, transparent 84%);
+    background-blend-mode: normal, normal, normal;
+}
