@@ -135,25 +135,25 @@ const KeyFeatures = () => {
       title: "Set your preferences",
       description:
         "Personalize your golfing experience by setting your preferences for things like skill level, availability, and course types. The app matches you with like-minded players based on your preferences. This helps ensure you always find the best partners to enjoy a round with, tailored to your style.",
-      mockup: <SetPreferencesScreen className="max-h-full max-w-full" />
+      mockup: <SetPreferencesScreen className="max-h-fit md:max-h-full max-w-full" />
     },
     {
       title: "Create perfect rounds",
       description:
         "Easily create and schedule rounds with your preferred partners and courses. The app helps you coordinate and plan your golfing outings, so you can focus on enjoying the game. You can create rounds for any occasion, whether it’s a casual game with friends or a competitive tournament.",
-      mockup: <CreateRoundScreen className="max-h-full max-w-full" />
+      mockup: <CreateRoundScreen className="max-h-fit md:max-h-full max-w-full" />
     },
     {
       title: "Find preferred rounds",
       description:
         "Discover golfing rounds that match your skill level and preferred time slots. You can filter and browse through available tee times, ensuring a seamless and convenient experience. Whether you’re looking for a quick round or a more competitive game, you’ll always find something that suits you.",
-      mockup: <RoundsScreen className="max-h-full max-w-full" />
+      mockup: <RoundsScreen className="max-h-fit md:max-h-full max-w-full" />
     },
     {
       title: "Enjoy more golf",
       description:
         "Keep track of your scores and performance over time to measure your progress and challenge yourself. The app offers tools to help you record and review your rounds, so you can focus on improving. This feature encourages a deeper connection with the sport, ensuring you enjoy more golf and reach new milestones.",
-      mockup: <IconHeadSpin className="max-h-full max-w-full" />
+      mockup: <IconHeadSpin className="max-h-fit md:max-h-full max-w-full" />
     },
   ], []);
   
@@ -198,7 +198,7 @@ const KeyFeatures = () => {
               {/* Mobile: Mockups */}
               <div
                 id="key-feature-image"
-                className="flex md:hidden w-full h-fit items-center justify-center rounded-2xl bg-background-secondary p-8"
+                className="flex md:hidden w-full max-h-fit items-center justify-center rounded-2xl bg-background-secondary p-8"
               >
                 {feature.mockup}
               </div>
