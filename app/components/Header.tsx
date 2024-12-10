@@ -12,7 +12,7 @@ const Header = () => {
     ]
 
     return (
-        <header>
+        <header id="header">
             <nav id="header-nav" className="w-full md:relative fixed top-0 z-50 bg-background-primary flex flex-row justify-between items-center text-sm md:text-lg">
                 <Link to="/" id='banner-logo-link' className='w-40 md:w-52'>
                     <BannerLogo />

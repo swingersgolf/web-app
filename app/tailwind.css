@@ -27,10 +27,6 @@ section {
   @apply py-8 sm:py-8 lg:py-12;
 }
 
-footer {
-  @apply w-full bg-neutral-dark text-neutral-light;
-}
-
 .title {
   @apply text-3xl md:text-5xl font-bold font-accent;
 }
