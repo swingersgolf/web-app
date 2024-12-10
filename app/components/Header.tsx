@@ -1,5 +1,4 @@
 import { Link } from "@remix-run/react";
-import { MdMenu } from "react-icons/md";
 import BannerLogo from "~/components/assets/BannerLogo";
 import { LinkType } from "~/types/navigationTypes";
 
@@ -8,7 +7,7 @@ const Header = () => {
     const actionButtons: LinkType[] = [
         {
             name: "Contact Us",
-            url: "#!"
+            url: "mailto:example@linksconnectinc@gmail.com"
         },
     ]
 
@@ -22,7 +21,7 @@ const Header = () => {
                     <ul className="hidden md:flex flex-row items-center justify-center gap-x-2 lg:gap-x-4">
                         {SiteLinks.map((link, index) => (
                             <li key={index}>
-                                <Link to={link.url} className="md:px-4 md:py-2 bg-background-primary border border-background-primary hover:bg-background-secondary hover:border-background-secondary rounded-md duration-200 transition-all">{link.name}</Link>
+                                <a href={link.url} className="md:px-4 md:py-2 bg-background-primary border border-background-primary hover:bg-background-secondary hover:border-background-secondary rounded-md duration-200 transition-all">{link.name}</a>
                             </li>
                         ))}
                     </ul>

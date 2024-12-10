@@ -68,48 +68,53 @@ const Hero = () => {
 
 
 const Sponsor = () => {
-  const Sponsors = [
-    {
-      name: "Titleist",
-      logo: "/images/sponsors/titleist.png",
-      url: "https://www.titleist.com/"
-    },
-    {
-      name: "Callaway",
-      logo: "/images/sponsors/callaway.png",
-      url: "https://www.callawaygolf.com/"
-    },
-    {
-      name: "TaylorMade",
-      logo: "/images/sponsors/taylormade.png",
-      url: "https://www.taylormadegolf.com/"
-    },
-    {
-      name: "Ping",
-      logo: "/images/sponsors/ping.png",
-      url: "https://ping.com/"
-    },
-    {
-      name: "Cobra",
-      logo: "/images/sponsors/cobra.webp",
-      url: "https://www.cobragolf.com/"
-    },
-    {
-      name: "Mizuno",
-      logo: "/images/sponsors/mizuno.png",
-      url: "https://us.mizuno.com/"
-    },
-    {
-      name: "Srixon",
-      logo: "/images/sponsors/srixon.jpg",
-      url: "https://www.srixon.com/"
-    },
-    {
-      name: "Bridgestone",
-      logo: "/images/sponsors/bridgestone.png",
-      url: "https://www.bridgestonegolf.com/"
-    }
-  ];  
+  const Sponsors = null;
+  // const Sponsors = [
+  //   {
+  //     name: "Titleist",
+  //     logo: "/images/sponsors/titleist.png",
+  //     url: "https://www.titleist.com/"
+  //   },
+  //   {
+  //     name: "Callaway",
+  //     logo: "/images/sponsors/callaway.png",
+  //     url: "https://www.callawaygolf.com/"
+  //   },
+  //   {
+  //     name: "TaylorMade",
+  //     logo: "/images/sponsors/taylormade.png",
+  //     url: "https://www.taylormadegolf.com/"
+  //   },
+  //   {
+  //     name: "Ping",
+  //     logo: "/images/sponsors/ping.png",
+  //     url: "https://ping.com/"
+  //   },
+  //   {
+  //     name: "Cobra",
+  //     logo: "/images/sponsors/cobra.webp",
+  //     url: "https://www.cobragolf.com/"
+  //   },
+  //   {
+  //     name: "Mizuno",
+  //     logo: "/images/sponsors/mizuno.png",
+  //     url: "https://us.mizuno.com/"
+  //   },
+  //   {
+  //     name: "Srixon",
+  //     logo: "/images/sponsors/srixon.jpg",
+  //     url: "https://www.srixon.com/"
+  //   },
+  //   {
+  //     name: "Bridgestone",
+  //     logo: "/images/sponsors/bridgestone.png",
+  //     url: "https://www.bridgestonegolf.com/"
+  //   }
+  // ];  
+
+  if (!Sponsors) {
+    return null;
+  }
   
   return (
     <section className="py-0">
