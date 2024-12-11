@@ -272,8 +272,8 @@ export default function Index() {
     <main>
       <Hero />
       <Sponsor />
-      <KeyFeatures />
-      <CallToAction />
+      {/* <KeyFeatures /> */}
+      {/* <CallToAction /> */}
     </main>
     <Footer/>
     </>
