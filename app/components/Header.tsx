@@ -7,7 +7,7 @@ const Header = () => {
     const actionButtons: LinkType[] = [
         {
             name: "Contact Us",
-            url: "mailto:example@linksconnectinc@gmail.com"
+            url: "mailto:linksconnectinc@gmail.com"
         },
     ]
 
