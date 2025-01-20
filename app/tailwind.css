@@ -34,3 +34,59 @@ section {
 .subtitle {
   @apply text-base md:text-2xl;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-3xl md:text-5xl font-bold font-accent;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+blockquote {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-left: 4px solid #ccc;
+  background: #f9f9f9;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  background-color: #f4f4f4;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}

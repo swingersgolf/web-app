@@ -6,6 +6,7 @@ export const loader: LoaderFunction = async () => {
   // Define the static URLs with their respective priorities
   const staticUrls = [
     { loc: `${domain}/`, priority: 1.0 }, // Highest priority for the base route
+    { loc: `${domain}/privacy`, priority: 0.5 },
   ];
 
   // Combine static and dynamic URLs

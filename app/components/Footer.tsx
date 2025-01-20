@@ -23,17 +23,12 @@ const Footer = () => {
     //     }
     // ];
 
-    const legal: LinkType[] = [];
-    // const legal: LinkType[] = [
-    //     {
-    //         name: 'Terms of Service',
-    //         url: '/terms'
-    //     },
-    //     {
-    //         name: 'Privacy Policy',
-    //         url: '/privacy'
-    //     },
-    // ]
+    const legal: LinkType[] = [
+        {
+            name: 'Privacy & Terms',
+            url: '/privacy'
+        },
+    ]
     
     return (
         <footer id='footer'>

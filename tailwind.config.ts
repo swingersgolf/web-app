@@ -17,7 +17,6 @@ export default {
         neutral: {
           light: '#F4F4F4',    // Light Neutral for backgrounds, light text
           medium: '#D3D3D3',   // Medium Neutral for body text, borders
-          mediumDark: '#4F4F4F', // Darker than medium light, but lighter than dark
           dark: '#2E2E2E',     // Dark Neutral for primary text, dark backgrounds
         },
         secondary: {
