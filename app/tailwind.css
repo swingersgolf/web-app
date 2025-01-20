@@ -6,8 +6,7 @@
 
 html,
 body {
-  @apply bg-background-primary text-neutral-dark;
-  @apply font-default;
+  @apply bg-background-primary text-neutral-dark font-default;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
@@ -19,8 +18,7 @@ main {
 }
 
 nav {
-  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
-  @apply py-2 sm:py-3 lg:py-4;
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4;
 }
 
 section {
@@ -28,65 +26,67 @@ section {
 }
 
 .title {
-  @apply text-3xl md:text-5xl font-bold font-accent;
+  @apply text-3xl sm:text-4xl md:text-5xl font-bold font-accent;
 }
 
 .subtitle {
-  @apply text-base md:text-2xl;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  @apply text-3xl md:text-5xl font-bold font-accent;
+  @apply text-base sm:text-lg md:text-2xl;
 }
 
 h1 {
-  font-size: 2.5rem;
+  @apply text-4xl sm:text-5xl md:text-6xl font-bold font-accent;
 }
 
 h2 {
-  font-size: 2rem;
+  @apply text-3xl sm:text-4xl md:text-5xl font-bold font-accent;
 }
 
 h3 {
-  font-size: 1.75rem;
+  @apply text-2xl sm:text-3xl md:text-4xl font-bold font-accent;
 }
 
 h4 {
-  font-size: 1.5rem;
+  @apply text-xl sm:text-2xl md:text-3xl font-bold font-accent;
 }
 
 h5 {
-  font-size: 1.25rem;
+  @apply text-lg sm:text-xl md:text-2xl font-bold font-accent;
 }
 
 h6 {
-  font-size: 1rem;
+  @apply text-base sm:text-lg md:text-xl font-bold font-accent;
 }
 
 p {
-  margin: 1rem 0;
-  line-height: 1.6;
+  @apply my-4 leading-relaxed;
 }
 
-ul, ol {
-  padding-left: 1.5rem;
-  margin: 1rem 0;
+.markdown-content ul,
+.markdown-content ol {
+  @apply pl-6 my-4 list-disc;
 }
 
-li {
-  margin: 0.5rem 0;
+.markdown-content li {
+  @apply my-2;
 }
 
-blockquote {
-  margin: 1rem 0;
-  padding: 1rem;
-  border-left: 4px solid #ccc;
-  background: #f9f9f9;
+.markdown-content blockquote {
+  @apply my-4 pl-4;
 }
 
-code {
-  font-family: 'Courier New', monospace;
-  background-color: #f4f4f4;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
+.markdown-content code {
+  @apply px-2 py-1 rounded;
+}
+
+.markdown-content a {
+  @apply underline;
+}
+
+.markdown-content h1, 
+.markdown-content h2, 
+.markdown-content h3, 
+.markdown-content h4, 
+.markdown-content h5, 
+.markdown-content h6 {
+  @apply mb-6 mt-4;
 }

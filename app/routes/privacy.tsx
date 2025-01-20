@@ -31,7 +31,7 @@ export default function Index() {
   return (
     <>
     <Header/>
-    <main>
+    <main className="mt-8 md:mt-0">
       <Privacy />
       <Terms />
     </main>
